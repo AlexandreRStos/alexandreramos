@@ -11,8 +11,8 @@ import config from '../../config/SiteConfig';
 
 const Content = styled.div`
   grid-column: 2;
-  box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
   padding: 2rem 4rem;
   background-color: ${props => props.theme.colors.bg};
   z-index: 9000;
@@ -51,8 +51,8 @@ const Contact = () => (
         <Link to="/">{config.siteTitle}</Link>
       </Header>
       <Content>
-        <h1>Contact</h1>
-        <p>Super cool intro text to get people contacting me! It uses Netlify's form feature.</p>
+        <h1>Contato</h1>
+        {/* <p>Super cool intro text to get people contacting me! It uses Netlify's form feature.</p> */}
         <form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
           <p>
             <label htmlFor="contact-name">

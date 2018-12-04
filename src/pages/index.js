@@ -7,8 +7,8 @@ import { media } from '../utils/media';
 
 const Content = styled.div`
   grid-column: 2;
-  box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
   padding: 3rem 6rem;
   @media ${media.tablet} {
     padding: 3rem 2rem;
@@ -45,10 +45,10 @@ const IndexPage = ({
   <Layout>
     <Wrapper>
       <Hero>
-        <h1>Hi.</h1>
+        <h1>Olá.</h1>
         <p>
-          I&apos;m John Doe, a Senior UX Developer with five years of industry experience, specializing in developing
-          React apps with the best UX users can get.
+          Me chamo Alexandre Ramos, e sou Front-End Developer freelance, especializado em desenvolvimento Web com
+          React.JS e todo seu ecossistema.
         </p>
         <Link to="/contact">
           <Button big>

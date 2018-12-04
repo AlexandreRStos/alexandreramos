@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
+import { DiscussionEmbed } from 'disqus-react';
 import { Layout, Wrapper, Header, Subline, SEO, PrevNext } from 'components';
 import { media } from '../utils/media';
 import config from '../../config/SiteConfig';
@@ -11,9 +12,9 @@ import '../utils/prismjs-theme.css';
 
 const Content = styled.article`
   grid-column: 2;
-  box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   max-width: 1000px;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
   padding: 2rem 4rem;
   background-color: ${props => props.theme.colors.bg};
   z-index: 9000;
@@ -37,6 +38,12 @@ const PostContent = styled.div`
 const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postNode } }) => {
   const post = postNode.frontmatter;
 
+  const disqusShortname = 'blog-alexandreramos';
+  const disqusConfig = {
+    identifier: post.id,
+    title: post.title,
+  };
+
   return (
     <Layout>
       <Wrapper>
@@ -53,6 +60,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postN
           </Subline>
           <PostContent dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <PrevNext prev={prev} next={next} />
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
         </Content>
       </Wrapper>
     </Layout>
