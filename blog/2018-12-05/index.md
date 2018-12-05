@@ -75,4 +75,4 @@ Olha só que legal temos o mesmo resultado!
 
 Foi bem facil criar nosso proprio metodo array.map() e com isso pode entender melhor como funciona este metodo com isso agora eu sei como melhor aplica-lo em meus proximos projetos.
 
-- <small>Obrigado por ler este post e deixe seu comentario aqui embaixo para eu saber se você está gostando.</small>
+> _Gostou? então deixe seu like isso ajuda bastante a continuar escrevendo_

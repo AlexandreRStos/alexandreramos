@@ -201,3 +201,5 @@ A mágica toda começa por aqui!
 ## Conclusão
 
 Existe divesas maneira de criar um menu como este! Mas eu adotei este codigo para a maioria do meus projetos por causa de sua simplicidade.
+
+> _Gostou?  então deixe seu like isso ajuda bastante a continuar escrevendo_ 
