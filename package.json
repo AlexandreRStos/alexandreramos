@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-minimal-blog",
-  "description": "Gatsby Starter - Minimal Blog",
+  "name": "blog-alexandreramos",
+  "description": "Alexandre Ramos's Blog Personal",
   "version": "2.0.0",
-  "author": "LekoArts <hello@lekoarts.de>",
+  "author": "Alexandre Ramos <alexandresantos84@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.8.0",
     "disqus-react": "^1.0.5",
