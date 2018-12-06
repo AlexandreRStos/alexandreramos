@@ -1,6 +1,6 @@
 ---
 date: "2018-12-05"
-title: "Ententendo o Array map"
+title: "Entendendo o Array map"
 category: "Javascript"
 ---
 
