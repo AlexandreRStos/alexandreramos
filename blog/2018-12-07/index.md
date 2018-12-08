@@ -121,7 +121,7 @@ multiplica(100)(5);
 //=> 500
 ```
 
-Isso pode não parecer super útil no início. No entanto, você pode usar uma aplicação parcial para escrever um código mais fácil de ler e raciocinar. Por exemplo, podemos substituir a complexas sintaxe de interpolação de funções para [styled-components](https://www.styled-components.com/)por algo bem mais limpo:
+Isso pode não parecer super útil no início. No entanto, você pode usar uma aplicação parcial para escrever um código mais fácil de ler e raciocinar. Por exemplo, podemos substituir a complexas sintaxe de interpolação de funções para [styled-components](https://www.styled-components.com/) por algo bem mais limpo:
 
 ```js
 // Antes

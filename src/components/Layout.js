@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${theme.colors.bg};
     background: ${theme.colors.primary};
   }
+
   body {
     background: ${theme.colors.bg};
     color: ${theme.default};
@@ -21,17 +22,26 @@ const GlobalStyle = createGlobalStyle`
       font-size: 14px;
     }
   }
+
   a {
     color: ${theme.colors.grey.dark};
     text-decoration: none;
     transition: all ${theme.transitions.normal};
+
+    :hover {
+      color: ${theme.colors.primary};
+    }
   }
-  a:hover {
+
+  a[target='_blank'] {
     color: ${theme.colors.primary};
+    border-bottom: dashed 1.5px ${theme.colors.primary};
   }
+
   h1, h2, h3, h4 {
     color: ${theme.colors.grey.dark};
   }
+
   blockquote {
     font-style: italic;
     position: relative;
@@ -45,10 +55,12 @@ const GlobalStyle = createGlobalStyle`
     width: 6px;
     margin-left: -1.6rem;
   }
+
   label {
     margin-bottom: .5rem;
     color: ${theme.colors.grey.dark};
   }
+
   input, textarea {
     border-radius: .5rem;
     border: none;
