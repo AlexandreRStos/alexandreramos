@@ -97,7 +97,10 @@ const Layout = ({ children }) => (
           {children}
           <Footer>
             &copy; 2018 by Alexandre Ramos. All rights reserved. <br />
-            <a href="https://github.com/AlexandreRStos/blog-alexandreramos">GitHub Repository</a> <br />
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/AlexandreRStos/blog-alexandreramos">
+              GitHub Repository
+            </a>{' '}
+            <br />
             <span>Last build: {data.site.buildTime}</span>
           </Footer>
         </React.Fragment>
