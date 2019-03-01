@@ -5,27 +5,11 @@ import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
 import { DiscussionEmbed } from 'disqus-react';
-import { Layout, Wrapper, Header, Subline, SEO, PrevNext } from 'components';
-import { media } from '../utils/media';
+import { Layout, Header, SEO, PrevNext } from '../components';
+import { Wrapper, Subline, Content } from '../elements';
+
 import config from '../../config/SiteConfig';
 import '../utils/prismjs-theme.css';
-
-const Content = styled.article`
-  grid-column: 2;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  max-width: 1000px;
-  border-radius: 0.25rem;
-  padding: 2rem 4rem;
-  background-color: ${props => props.theme.colors.bg};
-  z-index: 9000;
-  margin-top: -3rem;
-  @media ${media.tablet} {
-    padding: 3rem 3rem;
-  }
-  @media ${media.phone} {
-    padding: 2rem 1.5rem;
-  }
-`;
 
 const Title = styled.h1`
   margin-bottom: 1rem;
@@ -56,7 +40,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postN
           <Title>{post.title}</Title>
           <Subline>
             {post.date} &mdash; {postNode.timeToRead} Min Read &mdash; In{' '}
-            <Link to={`/blog/categories/${kebabCase(post.category)}`}>{post.category}</Link>
+            <Link to={`/blog/categories/${kebabCase(post.category)}`}> {post.category} </Link>
           </Subline>
           <PostContent dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <PrevNext prev={prev} next={next} />

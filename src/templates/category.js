@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Layout, Wrapper, Header, Subline, Article, SectionTitle } from 'components';
-import { media } from '../utils/media';
+import { Layout, Header, Article } from 'components';
+import { Wrapper, Subline, SectionTitle } from '../elements';
+import media from '../utils/media';
 import config from '../../config/SiteConfig';
 
 const Content = styled.div`

@@ -4,41 +4,26 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { Layout, Wrapper, Header, Button } from 'components';
-import { media } from '../utils/media';
+import { Layout, Header } from '../components';
+import { Content, Button, Wrapper } from '../elements';
 
 import config from '../../config/SiteConfig';
 
-const Content = styled.div`
-  grid-column: 2;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 0.25rem;
-  padding: 2rem 4rem;
-  background-color: ${props => props.theme.colors.bg};
-  z-index: 9000;
-  margin-top: -3rem;
-  @media ${media.tablet} {
-    padding: 3rem 3rem;
-  }
-  @media ${media.phone} {
-    padding: 2rem 1.5rem;
-  }
-  form {
-    p {
-      label,
-      input {
-        display: block;
-      }
-      input {
-        min-width: 275px;
-        margin-top: 0.5rem;
-      }
-      textarea {
-        resize: vertical;
-        min-height: 150px;
-        width: 100%;
-        margin-top: 0.5rem;
-      }
+const Form = styled.form`
+  p {
+    label,
+    input {
+      display: block;
+    }
+    input {
+      min-width: 275px;
+      margin-top: 0.5rem;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+      width: 100%;
+      margin-top: 0.5rem;
     }
   }
 `;
@@ -53,7 +38,7 @@ const Contact = () => (
       <Content>
         <h1>Contato</h1>
         {/* <p>Super cool intro text to get people contacting me! It uses Netlify's form feature.</p> */}
-        <form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
+        <Form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
           <p>
             <label htmlFor="contact-name">
               Name
@@ -74,7 +59,7 @@ const Contact = () => (
             <Button>Send</Button>
           </p>
           <input type="hidden" name="form-name" value="contact-form" />
-        </form>
+        </Form>
       </Content>
     </Wrapper>
   </Layout>

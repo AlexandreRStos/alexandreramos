@@ -1,9 +1,22 @@
 const sizes = {
-  tablet: '1200px',
+  desktop: '1200px',
+  tablet: '900px',
   phone: '600px',
 };
 
-export const media = {
-  tablet: `(max-width: ${sizes.tablet})`,
-  phone: `(max-width: ${sizes.phone})`,
+const media = {
+  desktop: {
+    up: `(min-width: ${sizes.desktop})`,
+    down: `(max-width: ${sizes.desktop})`,
+  },
+  tablet: {
+    up: `(min-width: ${sizes.tablet})`,
+    down: `(max-width: ${sizes.tablet})`,
+  },
+  phone: {
+    up: `(min-width: ${sizes.phone})`,
+    down: `(max-width: ${sizes.phone})`,
+  },
 };
+
+export default media;
