@@ -37,7 +37,7 @@ const Category = ({ pageContext: { category }, data: { allMarkdownRemark } }) =>
         <Content>
           <SectionTitle>Category &ndash; {category}</SectionTitle>
           <Subline sectionTitle>
-            {subline} (See <Link to="/categories">all categories</Link>)
+            {subline} (See <Link to="/blog/categories">all categories</Link>)
           </Subline>
           {edges.map(post => (
             <Article

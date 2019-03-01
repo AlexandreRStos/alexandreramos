@@ -9,13 +9,13 @@ exports.onCreateNode = ({ node, actions }) => {
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.slug)}`;
+      slug = `/blog/${_.kebabCase(node.frontmatter.slug)}`;
     }
     if (
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`;
+      slug = `/blog/${_.kebabCase(node.frontmatter.title)}`;
     }
     createNodeField({ node, name: 'slug', value: slug });
   }
@@ -79,7 +79,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         categories.forEach(category => {
           createPage({
-            path: `/categories/${_.kebabCase(category)}`,
+            path: `/blog/categories/${_.kebabCase(category)}`,
             component: categoryPage,
             context: {
               category,
