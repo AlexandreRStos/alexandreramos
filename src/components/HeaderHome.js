@@ -51,7 +51,7 @@ const Headline = styled.h2`
   }
 `;
 
-const HeaderHome = ({ hero }) => (
+const HeaderHome = ({ hero = false }) => (
   <Header>
     <Link to="/">
       <Logotipo>Alexandre Ramos</Logotipo>
@@ -73,5 +73,9 @@ const HeaderHome = ({ hero }) => (
 export default HeaderHome;
 
 HeaderHome.propTypes = {
-  hero: PropTypes.bool.isRequired,
+  hero: PropTypes.bool,
+};
+
+HeaderHome.defaultProps = {
+  hero: false,
 };

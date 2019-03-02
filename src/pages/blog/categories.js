@@ -11,24 +11,18 @@ import media from '../../utils/media';
 import config from '../../../config/SiteConfig';
 
 const Content = styled.div`
-  grid-column: 2/3;
-
-  border-radius: 0.25rem;
-  padding: 2rem 4rem;
-  background-color: ${props => props.theme.colors.bg};
+  grid-column: 2 / span 1;
+  padding: 2rem 1.5rem;
   z-index: 9000;
-
-  @media ${media.tablet.down} {
-    padding: 3rem 3rem;
+  @media ${media.tablet.up} {
+    padding: 2rem 4rem;
   }
-  @media ${media.phone.down} {
-    padding: 2rem 1.5rem;
+  @media ${media.phone.up} {
+    padding: 3rem 3rem;
   }
 `;
 
 const Title = styled.h3`
-  position: relative;
-  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   margin-bottom: 0.75rem;
 `;
 
@@ -41,8 +35,7 @@ const Category = ({
     <HeaderHome />
     <Wrapper>
       <Helmet title={`Categories | ${config.siteTitle}`} />
-      <Header>
-        {/* <Link to="/blog/">{config.siteTitle}</Link> */}
+      <Header columnCenter>
         <SectionTitle>Categories</SectionTitle>
       </Header>
       <Content>

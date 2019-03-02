@@ -8,9 +8,8 @@ const SectionTitle = styled.div`
   color: ${props => props.theme.colors.bg.default};
   position: relative;
   padding-bottom: 1rem;
-  /* margin-bottom: 4rem; */
 
-  &:after {
+  &::after {
     content: '';
     height: 1px;
     width: 50px;
@@ -18,7 +17,7 @@ const SectionTitle = styled.div`
     bottom: 0;
     left: 50%;
     margin-left: -25px;
-    background: ${props => props.theme.colors.grey.ultraLight};
+    background: ${props => props.theme.colors.bg.default};
   }
 `;
 

@@ -10,7 +10,7 @@ import config from '../../config/SiteConfig';
 import { HeaderHome } from '../components';
 
 const Content = styled.div`
-  grid-column: 2;
+  grid-column: 2 / 3;
   border-radius: 0.25rem;
   padding: 2rem 4rem;
   background-color: ${props => props.theme.colors.bg};
