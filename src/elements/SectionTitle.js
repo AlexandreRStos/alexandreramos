@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 const SectionTitle = styled.div`
-  font-size: ${props => props.theme.fontSize.small};
+  font-size: ${props => props.theme.fontSize.title};
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
-  color: ${props => props.theme.colors.text.title};
+  color: ${props => props.theme.colors.bg.default};
   position: relative;
   padding-bottom: 1rem;
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
 
   &:after {
     content: '';

@@ -5,18 +5,24 @@ import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
 import { DiscussionEmbed } from 'disqus-react';
-import { Layout, Header, SEO, PrevNext } from '../components';
+import { Layout, Header, SEO, PrevNext, HeaderHome } from '../components';
 import { Wrapper, Subline, Content } from '../elements';
 
 import config from '../../config/SiteConfig';
 import '../utils/prismjs-theme.css';
+import media from '../utils/media';
 
 const Title = styled.h1`
   margin-bottom: 1rem;
+  color: ${({ theme }) => theme.colors.bg.default};
+  font-size: 2rem;
+  @media ${media.phone.up} {
+    font-size: 2.5rem;
+  }
 `;
 
 const PostContent = styled.div`
-  margin-top: 4rem;
+  margin-top: 1rem;
 `;
 
 const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postNode } }) => {
@@ -30,18 +36,19 @@ const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postN
 
   return (
     <Layout>
+      <HeaderHome />
       <Wrapper>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <Helmet title={`${post.title} | ${config.siteTitle}`} />
         <Header>
-          <Link to="/">{config.siteTitle}</Link>
-        </Header>
-        <Content>
+          {/* <Link to="/">{config.siteTitle}</Link> */}
           <Title>{post.title}</Title>
           <Subline>
             {post.date} &mdash; {postNode.timeToRead} Min Read &mdash; In{' '}
             <Link to={`/blog/categories/${kebabCase(post.category)}`}> {post.category} </Link>
           </Subline>
+        </Header>
+        <Content>
           <PostContent dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <PrevNext prev={prev} next={next} />
           <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />

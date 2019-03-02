@@ -2,13 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import Helmet from 'react-helmet';
 import { Layout, Article } from 'components';
 import { Content, Wrapper, SectionTitle } from '../../elements';
 import media from '../../utils/media';
 import { HeaderHome } from '../../components';
+import config from '../../../config/SiteConfig';
 
 const Hero = styled.div`
-  grid-column: 2;
+  grid-column: 2 / 3;
   padding: 3rem 2rem 1rem;
   color: ${props => props.theme.colors.text.title};
 
@@ -34,6 +36,7 @@ const BlogPage = ({
   <Layout>
     <HeaderHome />
     <Wrapper>
+      <Helmet title={`Blog | ${config.siteTitle}`} />
       <Hero>
         <h1>Olá.</h1>
         <p>Seja bem vindo ao meu blog, aqui escrevo sobre coisas que gosto e outras coisas que aprendendo!</p>

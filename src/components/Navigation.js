@@ -23,7 +23,8 @@ const Item = styled.li`
 
 const LinkCustom = styled(Link)`
   color: white;
-  font-size: 0.7rem;
+  font-size: 0.5rem;
+
   @media ${media.phone.up} {
     font-size: ${({ theme }) => theme.fontSize.small};
   }
@@ -46,12 +47,12 @@ const Navigation = () => (
         <Link to="/#portfolio">Portifolio</Link>
       </Item>
       <Item>
-        <Link to="/#contato">Contato</Link>
+        <Link to="/contact">Contato</Link>
       </Item>
       <Item>
-        <Button>
-          <LinkCustom to="/blog">Blog</LinkCustom>
-        </Button>
+        <LinkCustom to="/blog">
+          <Button>Blog</Button>
+        </LinkCustom>
       </Item>
     </List>
   </nav>

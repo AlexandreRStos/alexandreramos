@@ -2,12 +2,15 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { Layout, Header } from '../components';
+import { Layout, Header, HeaderHome } from '../components';
 import { Content, Button, Wrapper } from '../elements';
 
 import config from '../../config/SiteConfig';
+
+const Title = styled.h1`
+  color: ${({ theme }) => theme.colors.bg.default};
+`;
 
 const Form = styled.form`
   p {
@@ -16,7 +19,7 @@ const Form = styled.form`
       display: block;
     }
     input {
-      min-width: 275px;
+      width: 100%;
       margin-top: 0.5rem;
     }
     textarea {
@@ -30,14 +33,13 @@ const Form = styled.form`
 
 const Contact = () => (
   <Layout>
+    <HeaderHome />
     <Wrapper>
       <Helmet title={`Contact | ${config.siteTitle}`} />
       <Header>
-        <Link to="/">{config.siteTitle}</Link>
+        <Title>Contato</Title>
       </Header>
       <Content>
-        <h1>Contato</h1>
-        {/* <p>Super cool intro text to get people contacting me! It uses Netlify's form feature.</p> */}
         <Form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
           <p>
             <label htmlFor="contact-name">

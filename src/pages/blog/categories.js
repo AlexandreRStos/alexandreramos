@@ -4,24 +4,24 @@ import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
-import { Layout, Header } from '../../components';
+import { Layout, Header, HeaderHome } from '../../components';
 import { Wrapper, SectionTitle } from '../../elements';
 import media from '../../utils/media';
 
 import config from '../../../config/SiteConfig';
 
 const Content = styled.div`
-  grid-column: 2;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  grid-column: 2/3;
+
   border-radius: 0.25rem;
   padding: 2rem 4rem;
   background-color: ${props => props.theme.colors.bg};
   z-index: 9000;
-  margin-top: -3rem;
-  @media ${media.tablet} {
+
+  @media ${media.tablet.down} {
     padding: 3rem 3rem;
   }
-  @media ${media.phone} {
+  @media ${media.phone.down} {
     padding: 2rem 1.5rem;
   }
 `;
@@ -38,13 +38,14 @@ const Category = ({
   },
 }) => (
   <Layout>
+    <HeaderHome />
     <Wrapper>
       <Helmet title={`Categories | ${config.siteTitle}`} />
       <Header>
-        <Link to="/blog/">{config.siteTitle}</Link>
+        {/* <Link to="/blog/">{config.siteTitle}</Link> */}
+        <SectionTitle>Categories</SectionTitle>
       </Header>
       <Content>
-        <SectionTitle>Categories</SectionTitle>
         {group.map(category => (
           <Title key={category.fieldValue}>
             <Link to={`/blog/categories/${kebabCase(category.fieldValue)}`}>{category.fieldValue}</Link> (

@@ -7,10 +7,10 @@ import { Layout, Header, Article } from 'components';
 import { Wrapper, Subline, SectionTitle } from '../elements';
 import media from '../utils/media';
 import config from '../../config/SiteConfig';
+import { HeaderHome } from '../components';
 
 const Content = styled.div`
   grid-column: 2;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
   padding: 2rem 4rem;
   background-color: ${props => props.theme.colors.bg};
@@ -30,16 +30,16 @@ const Category = ({ pageContext: { category }, data: { allMarkdownRemark } }) =>
 
   return (
     <Layout>
+      <HeaderHome />
       <Wrapper>
         <Helmet title={`${category} | ${config.siteTitle}`} />
         <Header>
-          <Link to="/">{config.siteTitle}</Link>
-        </Header>
-        <Content>
           <SectionTitle>Category &ndash; {category}</SectionTitle>
           <Subline sectionTitle>
             {subline} (See <Link to="/blog/categories">all categories</Link>)
           </Subline>
+        </Header>
+        <Content>
           {edges.map(post => (
             <Article
               title={post.node.frontmatter.title}
