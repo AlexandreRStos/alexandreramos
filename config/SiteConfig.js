@@ -1,13 +1,16 @@
 module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
 
-  siteTitle: 'Alexandre Ramos | Desenvolvedor Web Freelance | Blog', // Navigation and Site Title
+  siteTitle: 'Desenvolvedor Web Freelance | Blog', // Navigation and Site Title
   siteTitleAlt: "AR's Blog", // Alternative Site title for SEO
-  siteUrl: 'https://blog-alexandreramos.netlify.com', // Domain of your site. No trailing slash!
-  siteLanguage: 'pt-BR', // Language Tag on <html> element
+  siteUrl: 'https://alexandreramos.netlify.com', // Domain of your site. No trailing slash!
+  siteLanguage: 'pt-br', // Language Tag on <html> element
   siteBanner: '/social/banner.jpg', // Your image for og:image tag. You can find it in the /static folder
   favicon: 'src/favicon.png', // Your image for favicons. You can find it in the /src folder
-  siteDescription: 'Aqui escrevo sobre coisas que gosto e outras coisas que aprendi', // Your site descriptio
+  siteDescription:
+    'Me chamo Alexandre Ramos e sou desenvolvedor Web, desenvolvo projetos atraente que ganham vida usando transições e animações que atendem aos meus clientes, usando as tecnologias mais sofisticadas disponíveis atualmente para websites e aplicativos totalmente interativos e responsivos.',
+
+  // Your site descriptio
   author: 'Alexandre Ramos', // Author for schemaORGJSONLD
   siteLogo: '/social/logo.png', // Image for schemaORGJSONLD
 
@@ -19,7 +22,7 @@ module.exports = {
   // Manifest and Progress color
   // See: https://developers.google.com/web/fundamentals/web-app-manifest/
   themeColor: '#7159C1',
-  backgroundColor: '#eee',
+  backgroundColor: '#7159C1',
 
   // Settings for typography.js
   headerFontFamily: 'Jura',
