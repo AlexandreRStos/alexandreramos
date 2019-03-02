@@ -19,6 +19,10 @@ const typography = new Typography({
       name: config.bodyFontFamily,
       styles: ['400', '500'],
     },
+    {
+      name: 'Roboto',
+      styles: ['700'],
+    },
   ],
 });
 

@@ -8,5 +8,26 @@ import SEO from './SEO';
 import Subline from '../elements/Subline';
 import Wrapper from '../elements/Wrapper';
 import Portfolio from './Portfolio';
+import Stacks from './Stacks';
+import Clients from './Clients';
+import Contact from './Contact';
+import Navigation from './Navigation';
+import HeaderHome from './HeaderHome';
 
-export { Article, Button, Header, Layout, PrevNext, SectionTitle, SEO, Subline, Wrapper, Portfolio };
+export {
+  Article,
+  Button,
+  Header,
+  Layout,
+  PrevNext,
+  SectionTitle,
+  SEO,
+  Subline,
+  Wrapper,
+  Portfolio,
+  Stacks,
+  Clients,
+  Contact,
+  Navigation,
+  HeaderHome,
+};

@@ -17,6 +17,9 @@ module.exports = {
         path: `${__dirname}/blog`,
       },
     },
+
+    'gatsby-plugin-react-svg',
+
     {
       resolve: 'gatsby-transformer-remark',
       options: {

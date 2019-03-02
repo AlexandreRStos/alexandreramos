@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Layout, Portfolio } from '../components';
+import { Layout, Portfolio, Stacks, Clients, Contact, HeaderHome } from '../components';
 import { Title, Content, Wrapper } from '../elements';
 
 const Subtitle = styled.h3`
@@ -11,7 +11,8 @@ const Subtitle = styled.h3`
 
 const IndexPage = () => (
   <Layout>
-    <Wrapper as="section" background>
+    <HeaderHome hero />
+    <Wrapper as="section" id="sobre" background>
       <Content>
         <Title>Sobre mim e o que faço</Title>
         <p>
@@ -31,7 +32,7 @@ const IndexPage = () => (
       </Content>
     </Wrapper>
 
-    <Wrapper as="section">
+    <Wrapper as="section" id="servicos">
       <Content>
         <Title>Algumas soluçoes que posso desenvolver para voçê</Title>
         <Subtitle>Sites</Subtitle>
@@ -57,7 +58,10 @@ const IndexPage = () => (
         </p>
       </Content>
     </Wrapper>
-    <Portfolio />
+    <Portfolio id="portfolio" />
+    <Stacks />
+    <Clients />
+    <Contact id="contato" />
   </Layout>
 );
 

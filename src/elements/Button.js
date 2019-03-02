@@ -4,8 +4,9 @@ import { lighten } from 'polished';
 const Button = styled.button`
   background: ${props => props.theme.colors.primary};
   border: none;
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  ${props => props.center && 'margin: 0 auto'};
   border-radius: ${props => (props.big ? '1.5rem' : '1rem')};
   font-size: ${props => (props.big ? '1.2rem' : '1rem')};
   color: white;

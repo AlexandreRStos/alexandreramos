@@ -8,7 +8,7 @@ const Title = styled.h2`
   color: ${props => props.theme.colors.text.title};
   text-align: center;
   @media ${media.phone.up} {
-    text-align: left;
+    text-align: ${props => (props.center ? 'center' : 'left')};
   }
 `;
 

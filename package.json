@@ -14,6 +14,7 @@
     "gatsby-plugin-netlify": "^2.0.3",
     "gatsby-plugin-offline": "^2.0.11",
     "gatsby-plugin-react-helmet": "^3.0.1",
+    "gatsby-plugin-react-svg": "^2.0.0",
     "gatsby-plugin-sitemap": "^2.0.2",
     "gatsby-plugin-styled-components": "^3.0.1",
     "gatsby-plugin-typography": "^2.2.1",
@@ -29,6 +30,8 @@
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-helmet": "^5.2.0",
+    "react-typewriting": "^2.2.0",
+    "react-typing-animation": "^1.6.2",
     "react-typography": "^0.16.13",
     "styled-components": "^4.0.3",
     "typography": "^0.16.17"
@@ -43,6 +46,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop -o",
+    "dev-h": "gatsby develop -H 0.0.0.0 -p 8000",
     "serve": "gatsby build && gatsby serve",
     "lint": "yarn run lint:md && yarn run lint:js:fix",
     "lint:js": "eslint . --ext .js,.jsx --ignore-path .gitignore",

@@ -7,12 +7,16 @@ const GlobalStyle = createGlobalStyle`
     color: ${theme.colors.bg.white};
     background: ${theme.colors.primary};
   }
+  
+  html {
+    scroll-behavior: smooth;    
+  }
 
   body {
     background: ${theme.colors.bg.white};
     color: ${theme.colors.text.body};
     font-display: auto;  
-    font-size: 16px;
+    font-size: 1rem;
     @media ${media.phone.up} {
       font-size: 18px;
     }
