@@ -76,6 +76,7 @@ const SEO = props => {
       <html lang={config.siteLanguage} />
       <title>{config.siteTitle}</title>
       <meta name="description" content={description} />
+      <meta name="keywords" content={config.siteKeywords} />
       <meta name="image" content={image} />
       <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
       <meta property="og:locale" content={config.ogLanguage} />

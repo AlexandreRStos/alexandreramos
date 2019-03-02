@@ -1,14 +1,18 @@
 module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
 
-  siteTitle: 'Desenvolvedor Web Freelance | Blog', // Navigation and Site Title
+  siteTitle: 'Alexandre Ramos - Desenvolvedor Web | Freelance em São Paulo - SP, Programador Javascript, React, Nodejs', // Navigation and Site Title
   siteTitleAlt: "AR's Blog", // Alternative Site title for SEO
   siteUrl: 'https://alexandreramos.netlify.com', // Domain of your site. No trailing slash!
+
+  siteKeywords:
+    'desenvolvimento, desenvolvedor, Freelancer, sao paulo, sp, web, desenvolvedor web, desenvolvimento web, sites, sistemas, landing page, spa, pwa, jquery, javascript, react, api facebook, api twitter, profissional, freela,android, ios, loja virtual, e-commerce, aplicativos, aplicações, software, analista de sistemas, nerd,desenvolvedor web sp',
+
   siteLanguage: 'pt-br', // Language Tag on <html> element
   siteBanner: '/social/banner.jpg', // Your image for og:image tag. You can find it in the /static folder
   favicon: 'src/favicon.png', // Your image for favicons. You can find it in the /src folder
   siteDescription:
-    'Me chamo Alexandre Ramos e sou desenvolvedor Web, desenvolvo projetos atraente que ganham vida usando transições e animações que atendem aos meus clientes, usando as tecnologias mais sofisticadas disponíveis atualmente para websites e aplicativos totalmente interativos e responsivos.',
+    'Desenvolvedor Web | Freelance - São Paulo - SP, Sites, Sistemas, Landing Page, SPA, PWA, aplicativos, Javascript, React, Node.js ',
 
   // Your site descriptio
   author: 'Alexandre Ramos', // Author for schemaORGJSONLD
