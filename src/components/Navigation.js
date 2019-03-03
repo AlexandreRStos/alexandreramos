@@ -4,29 +4,38 @@ import styled from 'styled-components';
 import { Button } from '../elements';
 import media from '../utils/media';
 
+const Nav = styled.nav`
+  z-index: 10000;
+`;
+
 const List = styled.ul`
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 0;
+  margin: 0;
+  @media ${media.phone.down} {
+    padding-top: 0.5rem;
+  }
 `;
 const Item = styled.li`
-  padding: 0.1875rem;
+  padding: 0 0.1875rem;
   font-size: 0.7rem;
   font-weight: 500;
+  margin: 0;
   @media ${media.phone.up} {
     font-size: ${({ theme }) => theme.fontSize.small};
-    padding: 0.1875rem 0.4375rem;
+    padding: 0 0.4375rem;
   }
 `;
 
 const LinkCustom = styled(Link)`
   color: white;
-  font-size: 0.5rem;
-
-  @media ${media.phone.up} {
-    font-size: ${({ theme }) => theme.fontSize.small};
+  > * {
+    font-size: 0.7rem;
+    @media ${media.phone.up} {
+      font-size: ${({ theme }) => theme.fontSize.small};
+    }
   }
 
   :hover {
@@ -35,7 +44,7 @@ const LinkCustom = styled(Link)`
 `;
 
 const Navigation = () => (
-  <nav>
+  <Nav>
     <List>
       <Item>
         <Link to="/#sobre">Sobre</Link>
@@ -55,7 +64,7 @@ const Navigation = () => (
         </LinkCustom>
       </Item>
     </List>
-  </nav>
+  </Nav>
 );
 
 export default Navigation;

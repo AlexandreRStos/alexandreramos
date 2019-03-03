@@ -8,8 +8,26 @@ import { Navigation } from '.';
 import media from '../utils/media';
 
 const Header = styled.header`
-  padding: 1rem;
+  padding: 0 1rem 1rem;
   background-color: ${props => props.background && props.theme.colors.bg.default};
+`;
+
+const WrapperTop = styled.div`
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(150, 150, 150, 0.1);
+  width: 100%;
+  z-index: 12000;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem;
+  @media ${media.phone.up} {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+  }
 `;
 
 const Hero = styled.div`
@@ -17,14 +35,16 @@ const Hero = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 5rem 1rem 1rem;
   @media ${media.phone.up} {
     flex-direction: row;
-    padding: 2rem 0;
+    padding: 4rem 0;
   }
 `;
 const Logotipo = styled.h1`
-  font-size: ${props => props.theme.fontSize.title};
+  font-size: 1.1rem;
   text-align: center;
+  margin: 0;
 `;
 const Rounded = styled.div`
   width: 200px;
@@ -67,10 +87,14 @@ const HeaderHome = ({ hero }) => (
     `}
     render={data => (
       <Header>
-        <Link to="/">
-          <Logotipo>Alexandre Ramos</Logotipo>
-        </Link>
-        <Navigation />
+        <WrapperTop>
+          <Logotipo>
+            <Link to="/">Alexandre Ramos</Link>
+          </Logotipo>
+
+          <Navigation />
+        </WrapperTop>
+
         {hero && (
           <Hero>
             <Rounded>
