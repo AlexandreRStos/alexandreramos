@@ -2,7 +2,7 @@ module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
 
   siteTitle: 'Alexandre Ramos - Desenvolvedor Web | Freelance em São Paulo - SP, Programador Javascript, React, Nodejs', // Navigation and Site Title
-  siteTitleAlt: "AR's Blog", // Alternative Site title for SEO
+  siteTitleAlt: 'Alexandre Ramos - Desenvolvedor Web', // Alternative Site title for SEO
   siteUrl: 'https://alexandreramos.netlify.com', // Domain of your site. No trailing slash!
 
   siteKeywords:
@@ -20,8 +20,8 @@ module.exports = {
 
   // siteFBAppID: '123456789', // Facebook App ID - Optional
   userTwitter: '@alexandrer_stos', // Twitter Username - Optional
-  ogSiteName: 'alexandreramos.frontend', // Facebook Site Name - Optional
-  ogLanguage: 'pt_BR', // Facebook Language
+  ogSiteName: 'Alexandre Ramos - Desenvolvedor Web - São Paulo - SP', // Facebook Site Name - Optional
+  ogLanguage: 'pt_br', // Facebook Language
 
   // Manifest and Progress color
   // See: https://developers.google.com/web/fundamentals/web-app-manifest/
