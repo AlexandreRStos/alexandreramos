@@ -32,9 +32,9 @@ const Layout = ({ children }) => (
           <GlobalStyle />
           {children}
           <Footer>
-            &copy; 2018 by Alexandre Ramos. All rights reserved. <br />
+            &copy; 2018 por Alexandre Ramos. <br />
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/AlexandreRStos/blog-alexandreramos">
-              GitHub Repository
+              Repositorio GitHub
             </a>{' '}
             <br />
             <span>Last build: {data.site.buildTime}</span>

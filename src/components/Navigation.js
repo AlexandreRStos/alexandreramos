@@ -56,7 +56,7 @@ const Navigation = () => (
         <Link to="/#portfolio">Portfolio</Link>
       </Item>
       <Item>
-        <Link to="/contact">Contato</Link>
+        <Link to="/contato">Contato</Link>
       </Item>
       <Item>
         <LinkCustom to="/blog">

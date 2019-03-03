@@ -45,8 +45,8 @@ const Article = ({ title, date, excerpt, slug, timeToRead, category }) => {
         <Link to={slug}>{title}</Link>
       </Title>
       <Subline>
-        {date} &mdash; {timeToRead} Min Read &mdash; In{' '}
-        <Link to={`/blog/categories/${kebabCase(category)}`}>{category}</Link>
+        {date} &mdash; {timeToRead} Min leitura &mdash; em{' '}
+        <Link to={`/blog/categorias/${kebabCase(category)}`}>{category}</Link>
       </Subline>
       <Excerpt>{excerpt}</Excerpt>
     </Post>

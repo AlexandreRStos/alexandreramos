@@ -44,7 +44,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postN
           {/* <Link to="/">{config.siteTitle}</Link> */}
           <Title>{post.title}</Title>
           <Subline>
-            {post.date} &mdash; {postNode.timeToRead} Min Read &mdash; In{' '}
+            {post.date} &mdash; {postNode.timeToRead} Min leitura &mdash; em{' '}
             <Link to={`/blog/categories/${kebabCase(post.category)}`}> {post.category} </Link>
           </Subline>
         </Header>

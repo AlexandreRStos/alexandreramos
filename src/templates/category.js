@@ -26,7 +26,7 @@ const Content = styled.div`
 
 const Category = ({ pageContext: { category }, data: { allMarkdownRemark } }) => {
   const { edges, totalCount } = allMarkdownRemark;
-  const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${category}"`;
+  const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} com a tag "${category}"`;
 
   return (
     <Layout>
@@ -34,9 +34,9 @@ const Category = ({ pageContext: { category }, data: { allMarkdownRemark } }) =>
       <Wrapper>
         <Helmet title={`${category} | ${config.siteTitle}`} />
         <Header>
-          <SectionTitle>Category &ndash; {category}</SectionTitle>
+          <SectionTitle>Categoria &ndash; {category}</SectionTitle>
           <Subline sectionTitle>
-            {subline} (See <Link to="/blog/categories">all categories</Link>)
+            {subline} (Veja <Link to="/blog/categorias">todas categorias</Link>)
           </Subline>
         </Header>
         <Content>

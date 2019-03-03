@@ -35,7 +35,7 @@ const Contact = () => (
   <Layout>
     <HeaderHome />
     <Wrapper>
-      <Helmet title={`Contact | ${config.siteTitle}`} />
+      <Helmet title={`Contato | ${config.siteTitle}`} />
       <Header>
         <Title>Contato</Title>
       </Header>
@@ -43,7 +43,7 @@ const Contact = () => (
         <Form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
           <p>
             <label htmlFor="contact-name">
-              Name
+              Nome:
               <input name="name" id="contact-name" type="text" required />
             </label>
           </p>
@@ -54,7 +54,7 @@ const Contact = () => (
           </p>
           <p>
             <label htmlFor="contact-message">
-              Your Message <textarea name="message" id="contact-message" required />
+              Sua Mensagem <textarea name="message" id="contact-message" required />
             </label>
           </p>
           <p>

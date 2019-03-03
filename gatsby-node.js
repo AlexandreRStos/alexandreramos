@@ -79,7 +79,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         categories.forEach(category => {
           createPage({
-            path: `/blog/categories/${_.kebabCase(category)}`,
+            path: `/blog/categorias/${_.kebabCase(category)}`,
             component: categoryPage,
             context: {
               category,

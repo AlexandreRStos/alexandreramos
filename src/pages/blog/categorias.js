@@ -34,14 +34,14 @@ const Category = ({
   <Layout>
     <HeaderHome />
     <Wrapper>
-      <Helmet title={`Categories | ${config.siteTitle}`} />
+      <Helmet title={`Categorias | ${config.siteTitle}`} />
       <Header columnCenter>
-        <SectionTitle>Categories</SectionTitle>
+        <SectionTitle>Categorias</SectionTitle>
       </Header>
       <Content>
         {group.map(category => (
           <Title key={category.fieldValue}>
-            <Link to={`/blog/categories/${kebabCase(category.fieldValue)}`}>{category.fieldValue}</Link> (
+            <Link to={`/blog/categorias/${kebabCase(category.fieldValue)}`}>{category.fieldValue}</Link> (
             {category.totalCount})
           </Title>
         ))}

@@ -42,7 +42,7 @@ const BlogPage = ({
         <p>Seja bem vindo ao meu blog, aqui escrevo sobre coisas que gosto e outras coisas que aprendendo!</p>
       </Hero>
       <Content>
-        <SectionTitle>Latest stories</SectionTitle>
+        <SectionTitle>Ultimos Posts</SectionTitle>
         {postEdges.map(post => (
           <Article
             title={post.node.frontmatter.title}
