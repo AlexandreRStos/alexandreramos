@@ -6,7 +6,7 @@ import { Wrapper, Content, Button, Title } from '../elements';
 const Contact = ({ id }) => (
   <Wrapper as="section" background id={id}>
     <Content>
-      <Title center>Gostou do que voçê leu aqui sobre mim e do que faço e que conversar ?</Title>
+      <Title center>Gostou do que você leu aqui sobre mim e do que faço e que conversar ?</Title>
       <Link to="/contact">
         <Button big center>
           <svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">

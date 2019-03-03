@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { graphql, StaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 import { Wrapper, Content, Title } from '../elements';
-import AsiaMed from '../images/asiamed.png';
-import AsiaService from '../images/asiaservice.png';
-import AgenciaRed from '../images/agenciared.png';
-import AromaGospel from '../images/aromagospel.png';
 
 const Grid = styled.div`
   display: flex;
@@ -18,33 +16,62 @@ const Grid = styled.div`
   }
 `;
 
-const Img = styled.img`
-  height: 50px;
-  opacity: 0.7;
-  user-select: none;
-  text-align: center;
-`;
-
 const Clients = () => (
-  <Wrapper as="section">
-    <Content>
-      <Title>Alguns parceiros e clientes</Title>
-      <Grid>
-        <div>
-          <Img src={AsiaMed} alt="Asiamed" />
-        </div>
-        <div>
-          <Img src={AromaGospel} alt="Aroma Gospel" />
-        </div>
-        <div>
-          <Img src={AgenciaRed} alt="Agencia Red" />
-        </div>
-        <div>
-          <Img src={AsiaService} alt="Asia Service" />
-        </div>
-      </Grid>
-    </Content>
-  </Wrapper>
+  <StaticQuery
+    query={graphql`
+      query {
+        asiamedImage: file(relativePath: { eq: "asiamed.png" }) {
+          childImageSharp {
+            fixed(height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        aromagospelImage: file(relativePath: { eq: "aromagospel.png" }) {
+          childImageSharp {
+            fixed(height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        agenciaredImage: file(relativePath: { eq: "agenciared.png" }) {
+          childImageSharp {
+            fixed(height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        asiaserviceImage: file(relativePath: { eq: "asiaservice.png" }) {
+          childImageSharp {
+            fixed(height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Wrapper as="section">
+        <Content>
+          <Title>Alguns parceiros e clientes</Title>
+          <Grid>
+            <div>
+              <Img fixed={data.asiamedImage.childImageSharp.fixed} alt="Asiamed" />
+            </div>
+            <div>
+              <Img fixed={data.aromagospelImage.childImageSharp.fixed} alt="Aroma Gospel" />
+            </div>
+            <div>
+              <Img fixed={data.agenciaredImage.childImageSharp.fixed} alt="Agencia Red" />
+            </div>
+            <div>
+              <Img fixed={data.asiaserviceImage.childImageSharp.fixed} alt="Asia Service" />
+            </div>
+          </Grid>
+        </Content>
+      </Wrapper>
+    )}
+  />
 );
 
 export default Clients;

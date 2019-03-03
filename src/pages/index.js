@@ -34,7 +34,7 @@ const IndexPage = () => (
 
     <Wrapper as="section" id="servicos">
       <Content>
-        <Title>Algumas soluçoes que posso desenvolver para voçê</Title>
+        <Title>Algumas soluçoes que posso desenvolver para você</Title>
         <Subtitle>Sites</Subtitle>
         <p>
           Já possui um site ? Ou o seu site não tem um design legal, está lento ou não te agrada? Posso te ajudar com

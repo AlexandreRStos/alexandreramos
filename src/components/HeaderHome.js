@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { rgba } from 'polished';
-import { Link } from 'gatsby';
+import { Link, graphql, StaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 import { Navigation } from '.';
 import media from '../utils/media';
-import Foto from '../images/alexandre.png';
 
 const Header = styled.header`
   padding: 1rem;
@@ -36,11 +36,12 @@ const Rounded = styled.div`
     margin-right: 1rem;
   }
 `;
-const Img = styled.img`
+const Image = styled(Img)`
   border-radius: 50%;
   display: block;
   margin: 0;
-  transform: scale(0.98) translateX(1px);
+  padding: 0;
+  transform: scale(0.94) translateY(-1px);
 `;
 const Headline = styled.h2`
   font-size: ${props => props.theme.fontSize.title};
@@ -51,23 +52,38 @@ const Headline = styled.h2`
   }
 `;
 
-const HeaderHome = ({ hero = false }) => (
-  <Header>
-    <Link to="/">
-      <Logotipo>Alexandre Ramos</Logotipo>
-    </Link>
-    <Navigation />
-    {hero && (
-      <Hero>
-        <Rounded>
-          <Img src={Foto} alt="Foto Alexandre Ramos" />
-        </Rounded>
-        <Headline>
-          Ola, <br /> Sou desenvolvedor Web_
-        </Headline>
-      </Hero>
+const HeaderHome = ({ hero }) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        avatarImage: file(relativePath: { eq: "alexandre.png" }) {
+          childImageSharp {
+            fixed(width: 200, height: 200) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Header>
+        <Link to="/">
+          <Logotipo>Alexandre Ramos</Logotipo>
+        </Link>
+        <Navigation />
+        {hero && (
+          <Hero>
+            <Rounded>
+              <Image fixed={data.avatarImage.childImageSharp.fixed} alt="Foto Alexandre Ramos" />
+            </Rounded>
+            <Headline>
+              Ola, <br /> Sou desenvolvedor Web_
+            </Headline>
+          </Hero>
+        )}
+      </Header>
     )}
-  </Header>
+  />
 );
 
 export default HeaderHome;
