@@ -4,4 +4,4 @@ Ei, pessoal. Este é o meu blog pessoal construído com o incrível [Gatsby](htt
 
 Aqui escrevo sobre coisas que gosto e outras coisas que aprendi. Por favor, sinta-se livre para navegar.
 
-https://blog-alexandreramos.netlify.com
+https://alexandreramos.netlify.com
