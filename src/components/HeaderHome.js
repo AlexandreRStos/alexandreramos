@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import Typing from 'react-typist';
 import { rgba } from 'polished';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
@@ -101,7 +102,14 @@ const HeaderHome = ({ hero }) => (
               <Image fixed={data.avatarImage.childImageSharp.fixed} alt="Foto Alexandre Ramos" />
             </Rounded>
             <Headline>
-              Ola, <br /> Sou desenvolvedor Web_
+              Ola, <br />
+              <Typing tyle={{ display: 'inline' }} startDelay={500} cursor={{ hideWhenDone: true }}>
+                <span>Sou desenvolvedor Web </span>
+                <Typing.Backspace count={18} delay={1250} />
+                <span>Front-end </span>
+                <Typing.Backspace count={10} delay={1250} />
+                <span>Freelancer </span>
+              </Typing>
             </Headline>
           </Hero>
         )}
