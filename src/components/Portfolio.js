@@ -29,7 +29,7 @@ const Item = styled.div`
   :hover > div {
     height: 100%;
     > a {
-      opacity: 1;
+      opacity: 1;      
     }
   }
 `;
@@ -137,7 +137,7 @@ const Portfolio = ({ id }) => (
             <Item>
               <Image fluid={data.zanonciniImage.childImageSharp.fluid} alt="Zanoncini site institucional" />
               <Hover>
-                <Link href="https://zanoncini.netlify.com/" alt='site zanoncini'>
+                <Link href="https://zanoncini.netlify.com/" alt='site zanoncini' target="_blank" rel="noopener noreferrer">
                   Site <SvgExternalLink />
                 </Link>
               </Hover>
@@ -146,10 +146,10 @@ const Portfolio = ({ id }) => (
             <Item row="span 3">
               <Image fluid={data.chamanozapImage.childImageSharp.fluid} alt="Webapp Chama no Zap" />
               <Hover>
-                <Link href="https://alexandrerstos.github.io/chamanozap/" alt='site chama no zap'>
+                <Link href="https://alexandrerstos.github.io/chamanozap/" alt='site chama no zap' target="_blank" rel="noopener noreferrer">
                   Site <SvgExternalLink />
                 </Link>{' '}
-                <Link href="https://github.com/AlexandreRStos/chamanozap" alt='codigo chama no zap'>
+                <Link href="https://github.com/AlexandreRStos/chamanozap" alt='codigo chama no zap' target="_blank" rel="noopener noreferrer">
                   Codigo <strong>&lt;\&gt;</strong>
                 </Link>
               </Hover>
@@ -158,7 +158,7 @@ const Portfolio = ({ id }) => (
             <Item>
               <Image fluid={data.albertoImage.childImageSharp.fluid} alt="Tela de Captura de Email" />
               <Hover>
-                <Link href="https://albertojosmar.com.br/" alt='site alberto josmar'>
+                <Link href="https://albertojosmar.com.br/" alt='site alberto josmar' target="_blank" rel="noopener noreferrer">
                   Site <SvgExternalLink />
                 </Link>
               </Hover>
@@ -167,7 +167,7 @@ const Portfolio = ({ id }) => (
             <Item>
               <Image fluid={data.examploImage.childImageSharp.fluid} alt="Site Example App onepage" />
               <Hover>
-                <Link href="https://landing-conectus.netlify.com/" alt='site conectus'>
+                <Link href="https://landing-conectus.netlify.com/" alt='site conectus' target="_blank" rel="noopener noreferrer">
                   Site <SvgExternalLink />
                 </Link>
               </Hover>
@@ -176,7 +176,7 @@ const Portfolio = ({ id }) => (
             <Item>
               <Image fluid={data.asiamedImage.childImageSharp.fluid} alt="Site Example App onepage" />
               <Hover>
-                <Link href="https://asiamed.com.br/" alt='site asiamed'>
+                <Link href="https://asiamed.com.br/" alt='site asiamed' target="_blank" rel="noopener noreferrer">
                   Site <SvgExternalLink />
                 </Link>
               </Hover>
@@ -185,7 +185,7 @@ const Portfolio = ({ id }) => (
             <Item>
               <Image fluid={data.atargojuniorImage.childImageSharp.fluid} alt="landing page deputado Atargo Junior " />
               <Hover>
-                <Link href="https://artagaojunior.netlify.com/" alt='artago junior'>
+                <Link href="https://artagaojunior.netlify.com/" alt='artago junior' target="_blank" rel="noopener noreferrer">
                   Site <SvgExternalLink />
                 </Link>
               </Hover>
@@ -194,7 +194,7 @@ const Portfolio = ({ id }) => (
             <Item>
               <Image fluid={data.aromagospelImage.childImageSharp.fluid} alt="landing page deputado Atargo Junior " />
               <Hover>
-                <Link href="https://aromagospel.com.br/" alt='site aroma gospel'>
+                <Link href="https://aromagospel.com.br/" alt='site aroma gospel' target="_blank" rel="noopener noreferrer">
                   Site <SvgExternalLink />
                 </Link>
               </Hover>

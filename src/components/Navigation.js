@@ -33,14 +33,13 @@ const LinkCustom = styled(Link)`
   color: white;
   > * {
     font-size: 0.7rem;
+    :hover {
+    color: white;
+  }
     @media ${media.phone.up} {
       font-size: ${({ theme }) => theme.fontSize.small};
     }
-  }
-
-  :hover {
-    color: white;
-  }
+  }  
 `;
 
 const Navigation = () => (

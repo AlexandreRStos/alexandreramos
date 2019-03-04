@@ -32,11 +32,6 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  a[target='_blank'] {
-    color: ${theme.colors.primary};
-    border-bottom: dashed 1.5px ${theme.colors.primary};
-  }
-
   h1, h2, h3, h4 {
     color: ${theme.colors.text.title};
   }
