@@ -22,7 +22,7 @@ const Grid = styled.div`
 const Item = styled.div`
   grid-column: ${props => props.column && props.column};
   grid-row: ${props => props.row && props.row};
-  max-width: 300px;
+  max-width: 500px;
   min-width: 80px;
   width: 100%;
 `;
@@ -60,7 +60,7 @@ const Portfolio = ({ id }) => (
         }
         examploImage: file(relativePath: { eq: "example-home.png" }) {
           childImageSharp {
-            fluid(maxWidth: 300) {
+            fluid(maxWidth: 500) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -91,7 +91,7 @@ const Portfolio = ({ id }) => (
     render={data => (
       <Wrapper as="section" id={id} background>
         <Content>
-          <Title>Algumas coisas que eu fiz</Title>
+          <Title>Veja alguns sites que desenvolvi</Title>
           <Grid>
             <Item column="1/2">
               <Image fluid={data.zanonciniImage.childImageSharp.fluid} alt="Zanoncini site institucional" />
@@ -102,12 +102,12 @@ const Portfolio = ({ id }) => (
             <Item column="3/4" row="1/4">
               <Image fluid={data.chamanozapImage.childImageSharp.fluid} alt="Webapp Chama no Zap" />
             </Item>
-            <Item column="1/2">
+            <Item column="1/3">
               <Image fluid={data.examploImage.childImageSharp.fluid} alt="Site Example App onepage" />
             </Item>
-            <Item column="2/3">
+            {/* <Item column="2/3">
               <Image fluid={data.asiamedImage.childImageSharp.fluid} alt="Site Example App onepage" />
-            </Item>
+            </Item> */}
             <Item column="1/2">
               <Image fluid={data.atargojuniorImage.childImageSharp.fluid} alt="landing page deputado Atargo Junior " />
             </Item>

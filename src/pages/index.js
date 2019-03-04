@@ -16,45 +16,57 @@ const IndexPage = () => (
       <Content>
         <Title>Sobre mim e o que faço</Title>
         <p>
-          Me chamo Alexandre Ramos e desenvolvo projetos atraente que ganham vida usando transições e animações que
-          atendem aos meus clientes, usando as tecnologias mais sofisticadas disponíveis atualmente para websites e
-          aplicativos totalmente interativos e responsivos.
+          Me chamo Alexandre e desenvolvo sites e aplicativos atraente que ganham vida usando transições e animações,
+          com as tecnologias mais sofisticadas disponíveis atualmente.
         </p>
         <p>
-          Eu adoro trabalhar com agências e marcas para ajudá-las a atingir seu objetivo de criar propriedades digitais
-          verdadeiramente notáveis que obtêm a elas e seus clientes os resultados de que precisam.
+          Adoro trabalhar com agências e empreendedores para ajudá-los a atingir seu objetivo de criar propriedades
+          digitais verdadeiramente notáveis que obtêm a elas e seus clientes os resultados de que precisam.
         </p>
         <p>Sou apaixonado pelo poder das cores e formas no desenvolvimento de um ótimo design.</p>
         <p>
-          É claro que o diabo está nos detalhes, e é por isso que é importante para mim não apenas ser criativo, mas
-          também prestar atenção meticulosa aos detalhes para que meus clientes obtenham os resultados desejados.
+          É importante para mim não apenas ser criativo, mas também prestar atenção meticulosa aos detalhes para que
+          meus projetos obtenham os melhores resultados.
         </p>
       </Content>
     </Wrapper>
 
     <Wrapper as="section" id="servicos">
       <Content>
-        <Title>Algumas soluçoes que posso desenvolver para você</Title>
+        <Title>Algumas soluções que posso desenvolver para você</Title>
         <Subtitle>Sites</Subtitle>
         <p>
-          Já possui um site ? Ou o seu site não tem um design legal, está lento ou não te agrada? Posso te ajudar com
-          sites estáticos, com os principais tecnologias do mercado, ou ainda posso desenvolver um CMS exclusivamente
-          seu. Os sites são criados para serem extremamente leves, rápidos e totalmente responsivos. Também são
-          utilizadas boas práticas para melhorar o SEO e seu site apareça nas pesquisa dos pricinpias buscadores como o
-          GOOGLE.
+          <strong>
+            <i>
+              Já possui um site? Ou o seu site não tem um design legal, está lento ou não esta aparecendo nas busca do
+              Google?
+            </i>
+          </strong>
+          <br />
+          Posso te ajudar desenvovendo, atualizando ou Otimizando seu site com as principais tecnologias do mercado. Os
+          sites que eu crio são desenvolvidos para serem extremamente leves, rápidos e totalmente responsivos. Também
+          são otimizados para melhorar o <i>SEO</i>, assim seu site apareça nas pesquisa dos pricinpias buscadores como
+          o<strong> Google</strong>.
         </p>
         <Subtitle>Sistemas e APIs</Subtitle>
         <p>
-          Precisa de um sistema simples, ou um bem elaborado? Desenvolvo seu sistema que atender suas necessidades. O
-          seu sistema pode trabalhar com pagamentos, dados em tempo real ou gráficos, o que for melhor para o seu
-          negócio.
+          <strong>
+            <i>Precisa de um sistema simples, ou um bem elaborado?</i>
+          </strong>
+          <br />
+          Desenvolvo sistema que atender suas necessidades. O seu sistema pode trabalhar com pagamentos, dados em tempo
+          real ou gráficos, o que for melhor para suas necessidades e do seu negócio.
         </p>
         <Subtitle>SPA &amp; PWA</Subtitle>
         <p>
-          O site, ou sistema, é desenvolvido utilizando o conceito de Single-Page Applications (SPA), permitindo que
-          sejam muito rápidos e leves, o que não irá consumir muitos dados de rede, quando forem visitados através de
-          redes móveis. Com Progressive Web Apps (PWA), o seu site, ou sistema, pode até mesmo ser acessado quando você,
-          ou o visitante, não estiverem conectados na Internet. Este site inclusive já funciona offline, testa aí ;.
+          Os sites e sistemas que desenvolvo utiliza o conceito de <i>Single-Page Applications (SPA)</i>, permitindo que
+          sejam muito mais rápido e leve, o que não irá consumir muitos dados de rede, quando forem visitado através de
+          redes móveis. Com <i>Progressive Web Apps (PWA)</i>, o seu site ou sistema pode até ser acessado quando você
+          ou o visitante não estiverem conectados na Internet (offline).
+          <strong>
+            {' '}
+            <i>Este site inclusive já funciona offline, testa aí.</i>
+          </strong>
         </p>
       </Content>
     </Wrapper>

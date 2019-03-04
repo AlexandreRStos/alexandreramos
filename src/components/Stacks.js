@@ -37,15 +37,16 @@ const Grid = styled.div`
 const Stacks = () => (
   <Wrapper as="section">
     <Content>
-      <Title>Minhas principais Stacks</Title>
+      <Title>As principais tecnologias que utilizo</Title>
       <Grid>
         <SvgReact />
         <SvgJs />
         <SvgNode />
       </Grid>
       <p>
-        A principal tecnologia que atuo é o javascript, e seus principais frameworks como react, gatsby, node, mando bem
-        em Sass e gosto bantante css.
+        A principal tecnologia com que desenvolvo é o <i>javascript</i>, e seus principais frameworks como react, gatsby
+        e nodejs. Assim consigo desenvolver com muito mais agilidade e rapidez. Tendo o maior conhecimento possivel da
+        tecnologia usanda desenvolvo projetos mais consistente sem bug.
       </p>
     </Content>
   </Wrapper>
