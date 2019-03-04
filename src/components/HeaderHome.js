@@ -36,10 +36,9 @@ const Hero = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 5rem 1rem 1rem;
+  padding: 6rem 1rem 1rem;
   @media ${media.phone.up} {
     flex-direction: row;
-    padding: 4rem 0;
   }
 `;
 const Logotipo = styled.h1`
