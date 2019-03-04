@@ -56,7 +56,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   input, textarea {
-    border-radius: .5rem;
+    border-radius: .1rem;
     border: none;
     background: rgba(0, 0, 0, 0.05);
     padding: .25rem 1rem;

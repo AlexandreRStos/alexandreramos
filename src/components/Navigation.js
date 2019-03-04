@@ -29,19 +29,6 @@ const Item = styled.li`
   }
 `;
 
-const LinkCustom = styled(Link)`
-  color: white;
-  > * {
-    font-size: 0.7rem;
-    :hover {
-    color: white;
-  }
-    @media ${media.phone.up} {
-      font-size: ${({ theme }) => theme.fontSize.small};
-    }
-  }  
-`;
-
 const Navigation = () => (
   <Nav>
     <List>
@@ -58,9 +45,9 @@ const Navigation = () => (
         <Link to="/contato">Contato</Link>
       </Item>
       <Item>
-        <LinkCustom to="/blog">
-          <Button>Blog</Button>
-        </LinkCustom>
+        <Link to="/blog">
+          <Button small>Blog</Button>
+        </Link>
       </Item>
     </List>
   </Nav>
