@@ -99,7 +99,7 @@ const Portfolio = ({ id }) => (
             }
           }
         }
-        asiafacilitieImage: file(relativePath: { eq: "asiafacilitie.jpg" }) {
+        asiafacilitiesImage: file(relativePath: { eq: "asiafacilities.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid
@@ -185,7 +185,7 @@ const Portfolio = ({ id }) => (
             </Item>
 
             <Item>
-              <Image fluid={data.asiafacilitieImage.childImageSharp.fluid} alt="Site asia facilitie onepage" />
+              <Image fluid={data.asiafacilitiesImage.childImageSharp.fluid} alt="Site asia facilitie onepage" />
               <Hover>
                 <Link
                   href="http://asiafacilities.com.br"
