@@ -21,6 +21,7 @@ const transitions = {
 };
 
 const fontSize = {
+  smallest: '0.7rem', // 14.4px
   small: '0.9rem', // 14.4px
   default: '1.25rem', // 18px
   title: '1.375rem', // 22px

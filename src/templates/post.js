@@ -5,7 +5,7 @@ import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
 import { DiscussionEmbed } from 'disqus-react';
-import { Layout, Header, SEO, PrevNext, HeaderHome } from '../components';
+import { Layout, Header, SEO, PrevNext, HeaderHome, Share } from '../components';
 import { Wrapper, Subline, Content } from '../elements';
 
 import config from '../../config/SiteConfig';
@@ -45,11 +45,21 @@ const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postN
           <Title>{post.title}</Title>
           <Subline>
             {post.date} &mdash; {postNode.timeToRead} Min leitura &mdash; em{' '}
-            <Link to={`/blog/categories/${kebabCase(post.category)}`}> {post.category} </Link>
+            <Link to={`/blog/categorias/${kebabCase(post.category)}`}> {post.category} </Link>
           </Subline>
         </Header>
         <Content>
           <PostContent dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          <Share
+            socialConfig={{
+              twitterHandle: `${config.userTwitter}`,
+              config: {
+                url: `${config.siteUrl}${slug}`,
+                title: `${post.title}`,
+              },
+            }}
+            tags={[`${post.category}`]}
+          />
           <PrevNext prev={prev} next={next} />
           <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
         </Content>

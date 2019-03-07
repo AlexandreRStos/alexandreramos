@@ -13,6 +13,7 @@ import Clients from './Clients';
 import Contact from './Contact';
 import Navigation from './Navigation';
 import HeaderHome from './HeaderHome';
+import Share from './Share';
 
 export {
   Article,
@@ -30,4 +31,5 @@ export {
   Contact,
   Navigation,
   HeaderHome,
+  Share,
 };
