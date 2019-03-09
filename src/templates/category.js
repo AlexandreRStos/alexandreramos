@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Layout, Header, Article } from 'components';
+import { Layout, Header, Article, HeaderHome } from 'components';
 import { Wrapper, Subline, SectionTitle } from '../elements';
 import media from '../utils/media';
 import config from '../../config/SiteConfig';
-import { HeaderHome } from '../components';
 
 const Content = styled.div`
   grid-column: 2 / 3;
