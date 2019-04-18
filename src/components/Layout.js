@@ -33,7 +33,7 @@ const Layout = ({ children }) => (
           {children}
           <Footer>
             &copy; 2018 por Alexandre Ramos. <br />
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/AlexandreRStos/alexandreramos">
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/alexandreramosdev/alexandreramos">
               Repositorio GitHub
             </a>{' '}
             <br />
