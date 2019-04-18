@@ -3,7 +3,7 @@ module.exports = {
 
   siteTitle: 'Alexandre Ramos - Desenvolvedor Web | Freelance em São Paulo - SP, Programador Javascript, React, Nodejs', // Navigation and Site Title
   siteTitleAlt: 'AlexandreDev', // Alternative Site title for SEO
-  siteUrl: 'https://alexandreramos.cf', // Domain of your site. No trailing slash!
+  siteUrl: 'https://alexandreramos.tk', // Domain of your site. No trailing slash!
 
   siteKeywords:
     'desenvolvimento, desenvolvedor, Freelancer, sao paulo, sp, web, desenvolvedor web, desenvolvimento web, sites, sistemas, landing page, spa, pwa, jquery, javascript, react, api facebook, api twitter, profissional, freela,android, ios, loja virtual, e-commerce, aplicativos, aplicações, software, analista de sistemas, nerd,desenvolvedor web sp',
