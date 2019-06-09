@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import config from '../../config/SiteConfig';
+import config from '../../config';
 
 const SEO = props => {
   const { postNode, postPath, postSEO } = props;

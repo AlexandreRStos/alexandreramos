@@ -7,7 +7,7 @@ import { Link } from 'gatsby';
 import { Layout, Header } from '../components';
 import { Content, Wrapper } from '../elements';
 
-import config from '../../config/SiteConfig';
+import config from '../../config';
 
 const Success = () => (
   <Layout>

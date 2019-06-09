@@ -1,14 +1,14 @@
 {
   "extends": ["airbnb", "prettier", "prettier/react"],
   "parser": "babel-eslint",
-  "parserOptions": {
+  /* "parserOptions": {
     "ecmaVersion": 2017,
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
       "impliedStrict": true,
       "classes": true
-    }
-  },
+    } */
+  /* }, */
   "settings": {
     "import/resolver": {
       "node": {

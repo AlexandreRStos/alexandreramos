@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { Layout, Header, HeaderHome } from '../components';
 import { Content, Button, Wrapper } from '../elements';
 
-import config from '../../config/SiteConfig';
+import config from '../../config';
 
 const Title = styled.h1`
   color: ${({ theme }) => theme.colors.bg.default};

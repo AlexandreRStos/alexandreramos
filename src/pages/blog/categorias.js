@@ -8,7 +8,7 @@ import { Layout, Header, HeaderHome } from '../../components';
 import { Wrapper, SectionTitle } from '../../elements';
 import media from '../../utils/media';
 
-import config from '../../../config/SiteConfig';
+import config from '../../../config';
 
 const Content = styled.div`
   grid-column: 2 / span 1;

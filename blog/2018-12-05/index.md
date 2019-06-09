@@ -1,7 +1,7 @@
 ---
-date: '2018-12-05'
-title: 'Entendendo o Array map'
-category: 'Javascript'
+date: "2018-12-05"
+title: "Entendendo o Array map"
+category: "Javascript"
 ---
 
 **Uma pequena descrição da método [map()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/map).**
@@ -68,7 +68,7 @@ const novoArray = array.meuMap(function(item) {
   return item * 2;
 });
 
-cosole.log('novoArray', novoArray); // [4, 6, 10, 14, 22, 26]
+cosole.log("novoArray", novoArray); // [4, 6, 10, 14, 22, 26]
 ```
 
 Olha só que legal temos o mesmo resultado!

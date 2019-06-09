@@ -7,7 +7,7 @@ import { Layout, Article } from 'components';
 import { Content, Wrapper, SectionTitle } from '../../elements';
 import media from '../../utils/media';
 import { HeaderHome } from '../../components';
-import config from '../../../config/SiteConfig';
+import config from '../../../config';
 
 const Hero = styled.div`
   grid-column: 2 / 3;

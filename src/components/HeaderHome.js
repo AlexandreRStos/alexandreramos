@@ -5,7 +5,7 @@ import Typing from 'react-typist';
 import { rgba } from 'polished';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-import { Navigation } from '.';
+import Navigation from './Navigation';
 import media from '../utils/media';
 
 const Header = styled.header`
