@@ -136,7 +136,7 @@ const Portfolio = ({ id }) => (
           <Grid>
             <Item>
               <Image fluid={data.zanonciniImage.childImageSharp.fluid} alt="Zanoncini site institucional" />
-              <Hover>
+              {/* <Hover>
                 <Link
                   href="https://zanoncini.netlify.com/"
                   alt="site zanoncini"
@@ -145,7 +145,7 @@ const Portfolio = ({ id }) => (
                 >
                   Site <SvgExternalLink />
                 </Link>
-              </Hover>
+              </Hover> */}
             </Item>
 
             <Item row="span 3">
@@ -209,7 +209,7 @@ const Portfolio = ({ id }) => (
 
             <Item>
               <Image fluid={data.atargojuniorImage.childImageSharp.fluid} alt="landing page deputado Atargo Junior " />
-              <Hover>
+              {/* <Hover>
                 <Link
                   href="https://artagaojunior.netlify.com/"
                   alt="artago junior"
@@ -218,7 +218,7 @@ const Portfolio = ({ id }) => (
                 >
                   Site <SvgExternalLink />
                 </Link>
-              </Hover>
+              </Hover> */}
             </Item>
 
             <Item>
