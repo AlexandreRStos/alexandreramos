@@ -76,5 +76,13 @@
     "fstream": "^1.0.12",
     "prettier": "^1.18.2",
     "tar": "^4.4.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandreramosdev/alexandreramosdev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexandreramosdev/alexandreramosdev/issues"
+  },
+  "homepage": "https://github.com/alexandreramosdev/alexandreramosdev#readme"
 }
