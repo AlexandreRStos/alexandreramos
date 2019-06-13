@@ -1,5 +1,5 @@
 const colors = {
-  primary: '#7159C1', // Color for buttons or links
+  primary: '#663399', // '#7159C1'' Color for buttons or links
   bg: {
     default: '#F5F5F5',
     white: 'white', // Background color
