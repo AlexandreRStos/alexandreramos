@@ -20,8 +20,6 @@ const WrapperTop = styled.div`
   border-bottom: 1px solid rgba(150, 150, 150, 0.1);
   width: 100%;
   z-index: 12000;
-  left: 50%;
-  transform: translateX(-50%);
   padding: 0.5rem;
   @media ${media.phone.up} {
     display: flex;
