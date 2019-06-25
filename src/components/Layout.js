@@ -32,7 +32,7 @@ const Layout = ({ children }) => (
           <GlobalStyle />
           {children}
           <Footer>
-            &copy; 2018 por Alexandre Ramos. <br />
+            &copy; {new Date().getFullYear()} por Alexandre Ramos. <br />
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/alexandreramosdev/alexandreramosdev">
               Repositorio GitHub
             </a>{' '}
