@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import SvgExternalLink from '../images/svg/external-link-symbol.svg';
@@ -27,7 +27,7 @@ const Item = styled.div`
   transition: all ${({ theme }) => theme.transitions.normal};
 
   :hover > div {
-    height: 100%;
+    opacity: 1;
     > a {
       opacity: 1;
     }
@@ -39,14 +39,16 @@ const Hover = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 0;
+  height: 100%;
   background-color: #7159c1df;
+  opacity: 0;
 
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all ${({ theme }) => theme.transitions.normal};
 `;
+
 const Link = styled.a`
   opacity: 0;
   color: ${({ theme }) => theme.colors.bg.default};
@@ -74,142 +76,136 @@ const Image = styled(Img)`
   box-shadow: 4px 4px 1px rgba(50, 50, 50, 0.1);
 `;
 
-const Portfolio = ({ id }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        zanonciniImage: file(relativePath: { eq: "Zanoncini-home.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        albertoImage: file(relativePath: { eq: "alberto-home.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        chamanozapImage: file(relativePath: { eq: "chamanozap.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        asiafacilitiesImage: file(relativePath: { eq: "asiafacilities.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        asiamedImage: file(relativePath: { eq: "asiamed-home.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        atargojuniorImage: file(relativePath: { eq: "AtargaJunior-tela.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        aromagospelImage: file(relativePath: { eq: "aromagospel-home.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
+const Portfolio = ({ id }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      zanonciniImage: file(relativePath: { eq: "Zanoncini-home.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
-    `}
-    render={data => (
-      <Wrapper as="section" id={id} background>
-        <Content>
-          <Title>Veja alguns sites que desenvolvi</Title>
-          <Grid>
-            <Item>
-              <Image fluid={data.zanonciniImage.childImageSharp.fluid} alt="Zanoncini site institucional" />
-              {/* <Hover>
-                <Link
-                  href="https://zanoncini.netlify.com/"
-                  alt="site zanoncini"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Site <SvgExternalLink />
-                </Link>
-              </Hover> */}
-            </Item>
+      albertoImage: file(relativePath: { eq: "alberto-home.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      chamanozapImage: file(relativePath: { eq: "chamanozap.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      asiafacilitiesImage: file(relativePath: { eq: "asiafacilities.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      asiamedImage: file(relativePath: { eq: "asiamed-home.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      atargojuniorImage: file(relativePath: { eq: "AtargaJunior-tela.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      aromagospelImage: file(relativePath: { eq: "aromagospel-home.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+  return (
+    <Wrapper as="section" id={id} background>
+      <Content>
+        <Title>Veja alguns sites que desenvolvi</Title>
+        <Grid>
+          <Item>
+            <Image fluid={data.zanonciniImage.childImageSharp.fluid} alt="Zanoncini site institucional" />
+            <Hover>
+              <Link href="http://zanoncini.com.br/" alt="site zanoncini" target="_blank" rel="noopener noreferrer">
+                Site <SvgExternalLink />
+              </Link>
+            </Hover>
+          </Item>
 
-            <Item row="span 3">
-              <Image fluid={data.chamanozapImage.childImageSharp.fluid} alt="Webapp Chama no Zap" />
-              <Hover>
-                <Link
-                  href="https://alexandrerstos.github.io/chamanozap/"
-                  alt="site chama no zap"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Site <SvgExternalLink />
-                </Link>{' '}
-                <Link
-                  href="https://github.com/AlexandreRStos/chamanozap"
-                  alt="codigo chama no zap"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Codigo <strong>&lt;\&gt;</strong>
-                </Link>
-              </Hover>
-            </Item>
+          <Item row="span 3">
+            <Image fluid={data.chamanozapImage.childImageSharp.fluid} alt="Webapp Chama no Zap" />
+            <Hover>
+              <Link
+                href="https://alexandreramosdev.github.io/chamanozap/"
+                alt="site chama no zap"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Site <SvgExternalLink />
+              </Link>{' '}
+              <Link
+                href="https://github.com/Alexandreramosdev/chamanozap"
+                alt="codigo chama no zap"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Codigo <strong>&lt;\&gt;</strong>
+              </Link>
+            </Hover>
+          </Item>
 
-            <Item>
-              <Image fluid={data.albertoImage.childImageSharp.fluid} alt="Tela de Captura de Email" />
-              <Hover>
-                <Link
-                  href="https://albertojosmar.com.br/"
-                  alt="site alberto josmar"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Site <SvgExternalLink />
-                </Link>
-              </Hover>
-            </Item>
+          <Item>
+            <Image fluid={data.albertoImage.childImageSharp.fluid} alt="Tela de Captura de Email" />
+            <Hover>
+              <Link
+                href="https://albertojosmar.com.br/"
+                alt="site alberto josmar"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Site <SvgExternalLink />
+              </Link>
+            </Hover>
+          </Item>
 
-            <Item>
-              <Image fluid={data.asiafacilitiesImage.childImageSharp.fluid} alt="Site asia facilitie onepage" />
-              <Hover>
-                <Link
-                  href="http://asiafacilities.com.br"
-                  alt="site asia facilities"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Site <SvgExternalLink />
-                </Link>
-              </Hover>
-            </Item>
+          <Item>
+            <Image fluid={data.asiafacilitiesImage.childImageSharp.fluid} alt="Site asia facilitie onepage" />
+            <Hover>
+              <Link
+                href="http://asiafacilities.com.br"
+                alt="site asia facilities"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Site <SvgExternalLink />
+              </Link>
+            </Hover>
+          </Item>
 
-            <Item>
-              <Image fluid={data.asiamedImage.childImageSharp.fluid} alt="Site Example App onepage" />
-              <Hover>
-                <Link href="https://asiamed.com.br/" alt="site asiamed" target="_blank" rel="noopener noreferrer">
-                  Site <SvgExternalLink />
-                </Link>
-              </Hover>
-            </Item>
+          <Item>
+            <Image fluid={data.asiamedImage.childImageSharp.fluid} alt="Site Example App onepage" />
+            <Hover>
+              <Link href="https://asiamed.com.br/" alt="site asiamed" target="_blank" rel="noopener noreferrer">
+                Site <SvgExternalLink />
+              </Link>
+            </Hover>
+          </Item>
 
-            <Item>
-              <Image fluid={data.atargojuniorImage.childImageSharp.fluid} alt="landing page deputado Atargo Junior " />
-              {/* <Hover>
+          <Item>
+            <Image fluid={data.atargojuniorImage.childImageSharp.fluid} alt="landing page deputado Atargo Junior " />
+            {/* <Hover>
                 <Link
                   href="https://artagaojunior.netlify.com/"
                   alt="artago junior"
@@ -219,11 +215,11 @@ const Portfolio = ({ id }) => (
                   Site <SvgExternalLink />
                 </Link>
               </Hover> */}
-            </Item>
+          </Item>
 
-            <Item>
-              <Image fluid={data.aromagospelImage.childImageSharp.fluid} alt="landing page deputado Atargo Junior " />
-              <Hover>
+          <Item>
+            <Image fluid={data.aromagospelImage.childImageSharp.fluid} alt="landing page deputado Atargo Junior " />
+            {/*  <Hover>
                 <Link
                   href="https://aromagospel.com.br/"
                   alt="site aroma gospel"
@@ -231,15 +227,14 @@ const Portfolio = ({ id }) => (
                   rel="noopener noreferrer"
                 >
                   Site <SvgExternalLink />
-                </Link>
-              </Hover>
-            </Item>
-          </Grid>
-        </Content>
-      </Wrapper>
-    )}
-  />
-);
+                </Link> 
+              </Hover> */}
+          </Item>
+        </Grid>
+      </Content>
+    </Wrapper>
+  );
+};
 
 export default Portfolio;
 
