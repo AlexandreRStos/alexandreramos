@@ -33,7 +33,7 @@ const BlogPage = ({
     allMarkdownRemark: { edges: postEdges },
   },
 }) => (
-  <Layout>
+  <Layout bgdark>
     <HeaderHome />
     <Wrapper>
       <Helmet title={`Blog | ${config.siteTitle}`} />

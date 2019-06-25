@@ -11,6 +11,11 @@ const Post = styled.article`
   flex-direction: column;
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
+  border: 1px solid #eee;
+  padding: 45px 35px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 `;
 
 const Title = styled.h2`

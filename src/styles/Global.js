@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${theme.colors.bg.white};
+    background: ${({ bgdark }) => (bgdark ? '#eee' : theme.colors.bg.white)};
     color: ${theme.colors.text.body};
     font-display: auto;  
     font-size: 1rem;

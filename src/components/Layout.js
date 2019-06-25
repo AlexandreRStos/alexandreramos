@@ -17,7 +17,7 @@ const Footer = styled.footer`
   }
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children, bgdark }) => {
   const data = useStaticQuery(graphql`
     query LayoutQuery {
       site {
@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme}>
       <>
         <SEO />
-        <GlobalStyle />
+        <GlobalStyle bgdark={bgdark} />
         {children}
         <Footer>
           &copy; {new Date().getFullYear()} por Alexandre Ramos. <br />
@@ -45,8 +45,13 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
-
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
+  bgdark: PropTypes.bool,
 };
+
+Layout.defaultProps = {
+  bgdark: false,
+};
+
+export default Layout;
