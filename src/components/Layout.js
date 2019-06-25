@@ -2,8 +2,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import styled, { ThemeProvider } from 'styled-components';
+
 import SEO from './SEO';
 import theme from '../styles/Theme';
 import GlobalStyle from '../styles/Global';
@@ -16,34 +17,33 @@ const Footer = styled.footer`
   }
 `;
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query LayoutQuery {
-        site {
-          buildTime(formatString: "DD.MM.YYYY")
-        }
+const Layout = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query LayoutQuery {
+      site {
+        buildTime(formatString: "DD.MM.YYYY")
       }
-    `}
-    render={data => (
-      <ThemeProvider theme={theme}>
-        <React.Fragment>
-          <SEO />
-          <GlobalStyle />
-          {children}
-          <Footer>
-            &copy; {new Date().getFullYear()} por Alexandre Ramos. <br />
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/alexandreramosdev/alexandreramosdev">
-              Repositorio GitHub
-            </a>{' '}
-            <br />
-            <span>Last build: {data.site.buildTime}</span>
-          </Footer>
-        </React.Fragment>
-      </ThemeProvider>
-    )}
-  />
-);
+    }
+  `);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <>
+        <SEO />
+        <GlobalStyle />
+        {children}
+        <Footer>
+          &copy; {new Date().getFullYear()} por Alexandre Ramos. <br />
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/alexandreramosdev/alexandreramosdev">
+            Repositorio GitHub
+          </a>{' '}
+          <br />
+          <span>Last build: {data.site.buildTime}</span>
+        </Footer>
+      </>
+    </ThemeProvider>
+  );
+};
 
 export default Layout;
 
