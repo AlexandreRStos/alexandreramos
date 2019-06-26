@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { Layout, Article } from 'components';
+import { Layout, Article, Header } from '../../components';
 import { Content, SectionTitle } from '../../elements';
 import config from '../../../config';
-import { Header } from '../../components';
 
 const BlogPage = ({
   data: {
