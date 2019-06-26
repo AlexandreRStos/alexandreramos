@@ -8,8 +8,10 @@ export const Nav = styled.nav`
   position: fixed;
   border-bottom: 1px solid rgba(150, 150, 150, 0.1);
   background-color: rgba(255, 255, 255, 0.9);
-  padding-bottom: 0.5rem;
+
   z-index: 10;
+  top: 0;
+  left: 0;
 
   > ${Wrapper} {
     width: 100%;
@@ -30,6 +32,7 @@ export const List = styled.ul`
   align-items: center;
   justify-content: center;
   margin: 0;
+
   @media ${media.phone.down} {
     padding-top: 0.5rem;
   }
