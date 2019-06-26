@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Wrapper, Content, Title } from '../elements';
-import SvgJs from '../images/svg/javascript.svg';
-import SvgReact from '../images/svg/reactjs.svg';
-import SvgNode from '../images/svg/nodejs.svg';
-import media from '../utils/media';
+import { Section, Wrapper, Title } from '../../elements';
+import SvgJs from '../../images/svg/javascript.svg';
+import SvgReact from '../../images/svg/reactjs.svg';
+import SvgNode from '../../images/svg/nodejs.svg';
+import media from '../../utils/media';
 
 const Grid = styled.div`
   display: flex;
@@ -35,8 +35,8 @@ const Grid = styled.div`
 `;
 
 const Stacks = () => (
-  <Wrapper as="section">
-    <Content>
+  <Section>
+    <Wrapper>
       <Title>As principais tecnologias que utilizo</Title>
       <Grid>
         <SvgReact />
@@ -48,8 +48,8 @@ const Stacks = () => (
         e nodejs. Assim consigo desenvolver com muito mais agilidade e rapidez. Tendo o maior conhecimento possivel da
         tecnologia usanda desenvolvo projetos mais consistente sem bug.
       </p>
-    </Content>
-  </Wrapper>
+    </Wrapper>
+  </Section>
 );
 
 export default Stacks;

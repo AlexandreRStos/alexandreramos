@@ -6,12 +6,15 @@ import { Link } from 'gatsby';
 const Wrapper = styled.div`
   display: flex;
   margin: 2rem auto;
+  max-width: 900px;
+  padding: 0 1rem;
+  justify-items: center;
+
   a {
     color: ${props => props.theme.colors.primary};
     display: flex;
     align-items: center;
   }
-  justify-items: center;
 `;
 
 const Prev = styled.div`

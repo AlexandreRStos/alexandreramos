@@ -9,7 +9,8 @@ const GlobalStyle = createGlobalStyle`
   }
   
   html {
-    scroll-behavior: smooth;    
+    scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -39,11 +40,13 @@ const GlobalStyle = createGlobalStyle`
   blockquote {
     font-style: italic;
     position: relative;
+    max-width: 850px !important;    
   }
 
   blockquote:before {
     content: "";
     position: absolute;
+ 
     background: ${theme.colors.primary};
     height: 100%;
     width: 6px;

@@ -5,7 +5,7 @@ const SectionTitle = styled.div`
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
-  color: ${props => props.theme.colors.primary};
+  color: ${props => (props.light ? 'rgba(255, 255, 255, 0.8)' : props.theme.colors.primary)};
   position: relative;
   padding-bottom: 1rem;
 

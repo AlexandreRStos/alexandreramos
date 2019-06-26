@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { Wrapper, Content, Button, Title } from '../elements';
+import { Section, Wrapper, Button, Title } from '../../elements';
 
 const Contact = ({ id }) => (
-  <Wrapper as="section" background id={id}>
-    <Content>
+  <Section background id={id}>
+    <Wrapper>
       <Title center>Gostou do que você leu aqui sobre mim e do que faço e que conversar ?</Title>
       <Link to="/contato">
         <Button big center>
@@ -28,8 +28,8 @@ const Contact = ({ id }) => (
           Whatsapp
         </Button>
       </a>
-    </Content>
-  </Wrapper>
+    </Wrapper>
+  </Section>
 );
 
 export default Contact;

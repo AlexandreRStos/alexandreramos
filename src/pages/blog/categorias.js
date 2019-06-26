@@ -4,8 +4,8 @@ import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
-import { Layout, Header, HeaderHome } from '../../components';
-import { Wrapper, SectionTitle } from '../../elements';
+import { Layout, Header } from '../../components';
+import { Section, SectionTitle } from '../../elements';
 import media from '../../utils/media';
 
 import config from '../../../config';
@@ -32,12 +32,11 @@ const Category = ({
   },
 }) => (
   <Layout>
-    <HeaderHome />
-    <Wrapper>
-      <Helmet title={`Categorias | ${config.siteTitle}`} />
-      <Header columnCenter>
-        <SectionTitle>Categorias</SectionTitle>
-      </Header>
+    <Helmet title={`Categorias | ${config.siteTitle}`} />
+    <Header columnCenter>
+      <SectionTitle light>Categorias</SectionTitle>
+    </Header>
+    <Section>
       <Content>
         {group.map(category => (
           <Title key={category.fieldValue}>
@@ -46,7 +45,7 @@ const Category = ({
           </Title>
         ))}
       </Content>
-    </Wrapper>
+    </Section>
   </Layout>
 );
 

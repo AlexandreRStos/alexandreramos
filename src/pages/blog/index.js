@@ -1,32 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
 import Helmet from 'react-helmet';
 import { Layout, Article } from 'components';
-import { Content, Wrapper, SectionTitle } from '../../elements';
-import media from '../../utils/media';
-import { HeaderHome } from '../../components';
+import { Content, SectionTitle } from '../../elements';
 import config from '../../../config';
-
-const Hero = styled.div`
-  grid-column: 2 / 3;
-  padding: 3rem 2rem 1rem;
-  color: ${props => props.theme.colors.text.title};
-
-  p {
-    font-size: ${props => props.theme.fontSize.default};
-    margin-top: -1rem;
-
-    @media ${media.phone.up} {
-      font-size: 1.45rem;
-    }
-
-    @media ${media.tablet.up} {
-      font-size: 1.68rem;
-    }
-  }
-`;
+import { Header } from '../../components';
 
 const BlogPage = ({
   data: {
@@ -34,28 +13,27 @@ const BlogPage = ({
   },
 }) => (
   <Layout bgdark>
-    <HeaderHome />
-    <Wrapper>
-      <Helmet title={`Blog | ${config.siteTitle}`} />
-      <Hero>
-        <h1>Olá.</h1>
-        <p>Seja bem vindo ao meu blog, aqui escrevo sobre coisas que gosto e outras coisas que aprendendo!</p>
-      </Hero>
-      <Content>
-        <SectionTitle>Ultimos Posts</SectionTitle>
-        {postEdges.map(post => (
-          <Article
-            title={post.node.frontmatter.title}
-            date={post.node.frontmatter.date}
-            excerpt={post.node.excerpt}
-            timeToRead={post.node.timeToRead}
-            slug={post.node.fields.slug}
-            category={post.node.frontmatter.category}
-            key={post.node.fields.slug}
-          />
-        ))}
-      </Content>
-    </Wrapper>
+    <Helmet title={`Blog | ${config.siteTitle}`} />
+
+    <Header>
+      <h1 styles={{ color: 'rgba(255, 255, 255, 0.8)' }}>Olá.</h1>
+      <p>Seja bem vindo ao meu blog, aqui escrevo sobre coisas que gosto e outras coisas que aprendendo!</p>
+    </Header>
+
+    <Content>
+      <SectionTitle>Ultimos Posts</SectionTitle>
+      {postEdges.map(post => (
+        <Article
+          title={post.node.frontmatter.title}
+          date={post.node.frontmatter.date}
+          excerpt={post.node.excerpt}
+          timeToRead={post.node.timeToRead}
+          slug={post.node.fields.slug}
+          category={post.node.frontmatter.category}
+          key={post.node.fields.slug}
+        />
+      ))}
+    </Content>
   </Layout>
 );
 

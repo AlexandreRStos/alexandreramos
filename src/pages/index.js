@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Layout, Portfolio, Stacks, Clients, Contact, HeaderHome } from '../components';
-import { Title, Content, Wrapper } from '../elements';
+import { Title, Wrapper, Section } from '../elements';
+import { Layout, Portfolio, Stacks, ClientSection, Contact, Hero, Header } from '../components';
 
 const Subtitle = styled.h3`
   font-size: ${props => props.theme.fontSize.default};
@@ -11,9 +11,12 @@ const Subtitle = styled.h3`
 
 const IndexPage = () => (
   <Layout>
-    <HeaderHome hero />
-    <Wrapper as="section" id="sobre" background>
-      <Content>
+    <Header>
+      <Hero />
+    </Header>
+
+    <Section id="sobre" background>
+      <Wrapper>
         <Title>Sobre mim e o que faço</Title>
         <p>
           Me chamo Alexandre e desenvolvo sites e aplicativos atraente que ganham vida usando transições e animações,
@@ -28,11 +31,11 @@ const IndexPage = () => (
           É importante para mim não apenas ser criativo, mas também prestar atenção meticulosa aos detalhes para que
           meus projetos obtenham os melhores resultados.
         </p>
-      </Content>
-    </Wrapper>
+      </Wrapper>
+    </Section>
 
-    <Wrapper as="section" id="servicos">
-      <Content>
+    <Section id="servicos">
+      <Wrapper>
         <Title>Algumas soluções que posso desenvolver para você</Title>
         <Subtitle>Sites</Subtitle>
         <p>
@@ -68,11 +71,15 @@ const IndexPage = () => (
             <i>Este site inclusive já funciona offline, testa aí.</i>
           </strong>
         </p>
-      </Content>
-    </Wrapper>
+      </Wrapper>
+    </Section>
+
     <Portfolio id="portfolio" />
+
     <Stacks />
-    <Clients />
+
+    <ClientSection />
+
     <Contact id="contato" />
   </Layout>
 );

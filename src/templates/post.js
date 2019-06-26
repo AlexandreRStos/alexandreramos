@@ -5,8 +5,8 @@ import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
 import { DiscussionEmbed } from 'disqus-react';
-import { Layout, Header, SEO, PrevNext, HeaderHome, Share } from '../components';
-import { Wrapper, Subline, Content, Button } from '../elements';
+import { Layout, Header, SEO, PrevNext, Share } from '../components';
+import { Subline, Content, Button } from '../elements';
 
 import config from '../../config';
 import '../utils/prismjs-theme.css';
@@ -21,8 +21,21 @@ const Title = styled.h1`
   }
 `;
 
+const LinkStyes = styled(Link)`
+  :hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+`;
+
 const PostContent = styled.div`
   margin-top: 1rem;
+
+  > *:not(.gatsby-highlight) {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+  }
 `;
 
 const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postNode } }) => {
@@ -38,41 +51,39 @@ const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postN
 
   return (
     <Layout>
-      <HeaderHome />
-      <Wrapper>
-        <SEO postPath={slug} postNode={postNode} postSEO />
-        <Helmet title={`${post.title} | ${config.siteTitle}`} />
-        <Header>
-          {/* <Link to="/">{config.siteTitle}</Link> */}
-          <Title>{post.title}</Title>
-          <Subline>
-            {post.date} &mdash; {postNode.timeToRead} Min leitura &mdash; em{' '}
-            <Link to={`/blog/categorias/${kebabCase(post.category)}`}> {post.category} </Link>
-          </Subline>
-        </Header>
-        <Content>
-          <PostContent dangerouslySetInnerHTML={{ __html: postNode.html }} />
-          <Share
-            socialConfig={{
-              twitterHandle: `${config.userTwitter}`,
-              config: {
-                url: `${config.siteUrl}${slug}`,
-                title: `${post.title}`,
-              },
-            }}
-            tags={[`${post.category}`]}
-          />
-          <PrevNext prev={prev} next={next} />
+      <SEO postPath={slug} postNode={postNode} postSEO />
+      <Helmet title={`${post.title} | ${config.siteTitle}`} />
 
-          {isOpen ? (
-            <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-          ) : (
-            <Button center onClick={() => setIsOpen(true)}>
-              Comentários
-            </Button>
-          )}
-        </Content>
-      </Wrapper>
+      <Header>
+        <Title>{post.title}</Title>
+        <Subline>
+          {post.date} &mdash; {postNode.timeToRead} Min leitura &mdash; em{' '}
+          <LinkStyes to={`/blog/categorias/${kebabCase(post.category)}`}> {post.category} </LinkStyes>
+        </Subline>
+      </Header>
+
+      <Content>
+        <PostContent dangerouslySetInnerHTML={{ __html: postNode.html }} />
+        <Share
+          socialConfig={{
+            twitterHandle: `${config.userTwitter}`,
+            config: {
+              url: `${config.siteUrl}${slug}`,
+              title: `${post.title}`,
+            },
+          }}
+          tags={[`${post.category}`]}
+        />
+        <PrevNext prev={prev} next={next} />
+
+        {isOpen ? (
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        ) : (
+          <Button center onClick={() => setIsOpen(true)}>
+            Comentários
+          </Button>
+        )}
+      </Content>
     </Layout>
   );
 };

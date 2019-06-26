@@ -3,24 +3,16 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Layout, Header, Article, HeaderHome } from 'components';
-import { Wrapper, Subline, SectionTitle } from '../elements';
-import media from '../utils/media';
+import { Layout, Header, Article } from 'components';
+import { Section, Subline, SectionTitle } from '../elements';
 import config from '../../config';
 
-const Content = styled.div`
-  grid-column: 2 / 3;
-  border-radius: 0.25rem;
-  padding: 2rem 4rem;
+const Content = styled.main`
+  padding: 0 1rem;
   background-color: ${props => props.theme.colors.bg};
-  z-index: 9000;
-  margin-top: -3rem;
-  @media ${media.tablet} {
-    padding: 3rem 3rem;
-  }
-  @media ${media.phone} {
-    padding: 2rem 1.5rem;
-  }
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 `;
 
 const Category = ({ pageContext: { category }, data: { allMarkdownRemark } }) => {
@@ -29,11 +21,10 @@ const Category = ({ pageContext: { category }, data: { allMarkdownRemark } }) =>
 
   return (
     <Layout>
-      <HeaderHome />
-      <Wrapper>
+      <Section>
         <Helmet title={`${category} | ${config.siteTitle}`} />
         <Header>
-          <SectionTitle>Categoria &ndash; {category}</SectionTitle>
+          <SectionTitle light>Categoria &ndash; {category}</SectionTitle>
           <Subline sectionTitle>
             {subline} (Veja <Link to="/blog/categorias">todas categorias</Link>)
           </Subline>
@@ -51,7 +42,7 @@ const Category = ({ pageContext: { category }, data: { allMarkdownRemark } }) =>
             />
           ))}
         </Content>
-      </Wrapper>
+      </Section>
     </Layout>
   );
 };

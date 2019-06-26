@@ -1,80 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 
-import SvgExternalLink from '../images/svg/external-link-symbol.svg';
-import { Title, Content, Wrapper } from '../elements';
+import SvgExternalLink from '../../images/svg/external-link-symbol.svg';
+import { Title, Wrapper, Section } from '../../elements';
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 0.8rem;
-
-  > * {
-    margin: 5px;
-  }
-`;
-
-const Item = styled.div`
-  grid-column: ${props => props.column && props.column};
-  grid-row: ${props => props.row && props.row};
-  justify-self: center;
-  align-self: center;
-  width: 100%;
-  position: relative;
-  transition: all ${({ theme }) => theme.transitions.normal};
-
-  :hover > div {
-    opacity: 1;
-    > a {
-      opacity: 1;
-    }
-  }
-`;
-
-const Hover = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #7159c1df;
-  opacity: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all ${({ theme }) => theme.transitions.normal};
-`;
-
-const Link = styled.a`
-  opacity: 0;
-  color: ${({ theme }) => theme.colors.bg.default};
-  transition: all ${({ theme }) => theme.transitions.normal};
-  padding: 0 0.5rem;
-
-  svg {
-    transform: translateY(2px);
-    path {
-      transition: all ${({ theme }) => theme.transitions.normal};
-    }
-  }
-
-  :hover {
-    color: #ff916f;
-    path {
-      fill: #ff916f;
-    }
-  }
-`;
-
-const Image = styled(Img)`
-  max-width: 100%;
-  margin: 0;
-  box-shadow: 4px 4px 1px rgba(50, 50, 50, 0.1);
-`;
+import { Grid, Link, Item, Image, Hover } from './styles';
 
 const Portfolio = ({ id }) => {
   const data = useStaticQuery(graphql`
@@ -130,9 +61,10 @@ const Portfolio = ({ id }) => {
       }
     }
   `);
+
   return (
-    <Wrapper as="section" id={id} background>
-      <Content>
+    <Section id={id} background>
+      <Wrapper>
         <Title>Veja alguns sites que desenvolvi</Title>
         <Grid>
           <Item>
@@ -231,8 +163,8 @@ const Portfolio = ({ id }) => {
               </Hover> */}
           </Item>
         </Grid>
-      </Content>
-    </Wrapper>
+      </Wrapper>
+    </Section>
   );
 };
 

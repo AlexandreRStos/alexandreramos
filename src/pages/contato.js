@@ -3,8 +3,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
-import { Layout, Header, HeaderHome } from '../components';
-import { Content, Button, Wrapper } from '../elements';
+import { Layout, Header } from '../components';
+import { Wrapper, Button, Section } from '../elements';
 
 import config from '../../config';
 
@@ -31,15 +31,15 @@ const Form = styled.form`
   }
 `;
 
-const Contact = () => (
+const Contato = () => (
   <Layout>
-    <HeaderHome />
-    <Wrapper>
-      <Helmet title={`Contato | ${config.siteTitle}`} />
-      <Header>
-        <Title>Contato</Title>
-      </Header>
-      <Content>
+    {/* <HeaderHome /> */}
+    <Helmet title={`Contato | ${config.siteTitle}`} />
+    <Header>
+      <Title>Contato</Title>
+    </Header>
+    <Section>
+      <Wrapper>
         <Form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
           <p>
             <label htmlFor="contact-name">
@@ -67,9 +67,9 @@ const Contact = () => (
           </p>
           <input type="hidden" name="form-name" value="contact-form" />
         </Form>
-      </Content>
-    </Wrapper>
+      </Wrapper>
+    </Section>
   </Layout>
 );
 
-export default Contact;
+export default Contato;
