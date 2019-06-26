@@ -67,7 +67,9 @@ const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postN
           {isOpen ? (
             <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
           ) : (
-            <Button center onClick={() => setIsOpen(true)}>Comentários</Button>
+            <Button center onClick={() => setIsOpen(true)}>
+              Comentários
+            </Button>
           )}
         </Content>
       </Wrapper>
