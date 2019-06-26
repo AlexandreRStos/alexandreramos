@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
 import { DiscussionEmbed } from 'disqus-react';
-import { Layout, Header, SEO, PrevNext, HeaderHome } from '../components';
-import { Wrapper, Subline, Content } from '../elements';
+import { Layout, Header, SEO, PrevNext, HeaderHome, Share } from '../components';
+import { Wrapper, Subline, Content, Button } from '../elements';
 
 import config from '../../config';
 import '../utils/prismjs-theme.css';
@@ -27,6 +27,8 @@ const PostContent = styled.div`
 
 const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postNode } }) => {
   const post = postNode.frontmatter;
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const disqusShortname = 'blog-alexandreramos';
   const disqusConfig = {
@@ -50,7 +52,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postN
         </Header>
         <Content>
           <PostContent dangerouslySetInnerHTML={{ __html: postNode.html }} />
-          {/*           <Share
+          <Share
             socialConfig={{
               twitterHandle: `${config.userTwitter}`,
               config: {
@@ -59,9 +61,14 @@ const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postN
               },
             }}
             tags={[`${post.category}`]}
-          /> */}
+          />
           <PrevNext prev={prev} next={next} />
-          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+
+          {isOpen ? (
+            <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+          ) : (
+            <Button center onClick={() => setIsOpen(true)}>Comentários</Button>
+          )}
         </Content>
       </Wrapper>
     </Layout>

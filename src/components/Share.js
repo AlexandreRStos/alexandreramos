@@ -106,7 +106,7 @@ const WrapperSocial = styled.div`
 const Share = ({ socialConfig, tags }) => (
   <Wrapper>
     <h3>Espalhe a palavra!</h3>
-    <p>Compartilhe este artigo nas redes sociais clicando nos botões.</p>
+    <p>Compartilhe este artigo nas redes sociais.</p>
     <WrapperSocial>
       <FacebookShareButton url={socialConfig.config.url} className="button facebook">
         <span className="icon">

@@ -11,7 +11,7 @@ import GlobalStyle from '../styles/Global';
 
 const Footer = styled.footer`
   text-align: center;
-  padding: 3rem 0;
+  padding: 0 0 1rem;
   span {
     font-size: 0.75rem;
   }
