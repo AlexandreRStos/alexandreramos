@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Typing from 'react-typist';
 import { rgba } from 'polished';
-import { Link, graphql, StaticQuery } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Navigation from './Navigation';
 import media from '../utils/media';
 
 const Header = styled.header`
-  padding: 0 1rem 1rem;
+  padding: 0 0 1rem;
   background-color: ${props => props.background && props.theme.colors.bg.default};
 `;
 
@@ -21,6 +21,7 @@ const WrapperTop = styled.div`
   width: 100%;
   z-index: 12000;
   padding: 0.5rem;
+
   @media ${media.phone.up} {
     display: flex;
     justify-content: space-around;
@@ -70,50 +71,49 @@ const Headline = styled.h2`
   }
 `;
 
-const HeaderHome = ({ hero }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        avatarImage: file(relativePath: { eq: "alexandre.png" }) {
-          childImageSharp {
-            fixed(width: 200, height: 200) {
-              ...GatsbyImageSharpFixed
-            }
+const HeaderHome = ({ hero }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      avatarImage: file(relativePath: { eq: "alexandre.png" }) {
+        childImageSharp {
+          fixed(width: 200, height: 200) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
-    `}
-    render={data => (
-      <Header>
-        <WrapperTop>
-          <Logotipo>
-            <Link to="/">Alexandre Ramos</Link>
-          </Logotipo>
+    }
+  `);
 
-          <Navigation />
-        </WrapperTop>
+  return (
+    <Header>
+      <WrapperTop>
+        <Logotipo>
+          <Link to="/">Alexandre Ramos</Link>
+        </Logotipo>
 
-        {hero && (
-          <Hero>
-            <Rounded>
-              <Image fixed={data.avatarImage.childImageSharp.fixed} alt="Foto Alexandre Ramos" />
-            </Rounded>
-            <Headline>
-              Ola, <br />
-              <Typing tyle={{ display: 'inline' }} startDelay={500} cursor={{ hideWhenDone: true }}>
-                <span>Sou desenvolvedor Web </span>
-                <Typing.Backspace count={18} delay={1250} />
-                <span>Front-end </span>
-                <Typing.Backspace count={10} delay={1250} />
-                <span>Freelancer </span>
-              </Typing>
-            </Headline>
-          </Hero>
-        )}
-      </Header>
-    )}
-  />
-);
+        <Navigation />
+      </WrapperTop>
+
+      {hero && (
+        <Hero>
+          <Rounded>
+            <Image fixed={data.avatarImage.childImageSharp.fixed} alt="Foto Alexandre Ramos" />
+          </Rounded>
+          <Headline>
+            Ola, <br />
+            <Typing tyle={{ display: 'inline' }} startDelay={500} cursor={{ hideWhenDone: true }}>
+              <span>Sou desenvolvedor Web </span>
+              <Typing.Backspace count={18} delay={1250} />
+              <span>Front-end </span>
+              <Typing.Backspace count={10} delay={1250} />
+              <span>Freelancer </span>
+            </Typing>
+          </Headline>
+        </Hero>
+      )}
+    </Header>
+  );
+};
 
 export default HeaderHome;
 
