@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
 import { DiscussionEmbed } from 'disqus-react';
 import { Layout, Header, SEO, PrevNext, Share } from '../components';
-import { Subline, Content, Button } from '../elements';
+import { Subline, Content, Button, Wrapper } from '../elements';
 
 import config from '../../config';
 import '../utils/prismjs-theme.css';
@@ -77,7 +77,9 @@ const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postN
         <PrevNext prev={prev} next={next} />
 
         {isOpen ? (
-          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+          <Wrapper>
+            <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+          </Wrapper>
         ) : (
           <Button center onClick={() => setIsOpen(true)}>
             Comentários
