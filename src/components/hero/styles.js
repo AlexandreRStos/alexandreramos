@@ -9,8 +9,6 @@ export const Rounded = styled.div`
   border-radius: 50%;
   background-color: white;
   border: 3px solid ${props => rgba(props.theme.colors.primary, 0.4)};
-  opacity: 0.5;
-
   @media ${media.phone.up} {
     margin-right: 1rem;
   }
@@ -21,7 +19,6 @@ export const Image = styled(Img)`
   margin: 0;
   padding: 0;
   transform: scale(0.94) translateY(-1px);
-  filter: contrast(1.5);
 `;
 export const Headline = styled.h2`
   font-size: ${props => props.theme.fontSize.title};
