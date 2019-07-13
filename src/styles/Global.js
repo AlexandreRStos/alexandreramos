@@ -1,6 +1,9 @@
+import React from 'react';
 import { createGlobalStyle } from 'styled-components';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 import theme from './Theme';
 import media from '../utils/media';
+import extLink from '../images/external-link.png';
 
 const GlobalStyle = createGlobalStyle`
   ::selection {
@@ -33,6 +36,22 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  a[target="_blank"]{
+    color: #111;
+    font-weight: bold;
+
+    &::after {
+      content:  ' ';
+      background: url(${extLink}) right bottom  / 20px no-repeat;
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      vertical-align: center;
+      margin: 0 0 -4px 0;
+      padding: 0;
+    }
+  }
+
   h1, h2, h3, h4 {
     color: ${theme.colors.text.title};
   }
@@ -43,7 +62,7 @@ const GlobalStyle = createGlobalStyle`
     max-width: 850px !important;    
   }
 
-  blockquote:before {
+  blockquote::before {
     content: "";
     position: absolute;
  

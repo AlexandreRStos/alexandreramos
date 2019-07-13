@@ -8,6 +8,7 @@ module.exports = {
     siteUrl: config.siteUrl + pathPrefix,
   },
   plugins: [
+    `gatsby-plugin-webpack-bundle-analyzer`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {
@@ -37,6 +38,12 @@ module.exports = {
             options: {
               target: `_blank`,
               rel: `nofollow noopener noreferrer`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
             },
           },
           `gatsby-remark-prismjs`,
