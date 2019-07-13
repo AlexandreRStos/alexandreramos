@@ -1,6 +1,4 @@
-import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { FaExternalLinkAlt } from 'react-icons/fa';
 import theme from './Theme';
 import media from '../utils/media';
 import extLink from '../images/external-link.png';
