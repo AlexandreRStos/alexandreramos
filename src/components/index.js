@@ -10,5 +10,20 @@ import Contact from './contact';
 import Navigation from './navbar';
 import Hero from './hero';
 import Share from './share';
+import GoogleAd from './GoogleAd';
 
-export { Article, Header, Layout, PrevNext, SEO, Portfolio, Stacks, ClientSection, Contact, Navigation, Hero, Share };
+export {
+  Article,
+  Header,
+  Layout,
+  PrevNext,
+  SEO,
+  Portfolio,
+  Stacks,
+  ClientSection,
+  Contact,
+  Navigation,
+  Hero,
+  Share,
+  GoogleAd,
+};
